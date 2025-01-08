@@ -26,9 +26,9 @@
         <nav class="hidden md:flex space-x-8">
           <a href="#" class="hover:text-accent">Home</a>
           <a href="./pages/about.html" class="hover:text-accent">About</a>
-          <a href="#features" class="hover:text-accent">Services</a>
-          <a href="#courses" class="hover:text-accent">Courses</a>
-          <a href="#contact" class="hover:text-accent">Contact</a>
+          <a href="./pages/services.html" class="hover:text-accent">Services</a>
+          <a href="./pages/courses.html" class="hover:text-accent">Courses</a>
+          <a href="./pages/contact.html" class="hover:text-accent">Contact</a>
         </nav>
 
         <!-- Desktop CTA Button -->
@@ -109,27 +109,27 @@
             />
             <span class="ml-3 text-xl font-bold">Bright Path</span>
           </a>
-          <a href="#" class="text-2xl py-3 hover:underline hover:text-accent"
+          <a href="#" class="text-sm py-3 hover:underline hover:text-accent"
             >Home</a
           >
           <a
             href="./pages/about.html"
-            class="text-2xl py-3 hover:underline hover:text-accent"
+            class="text-sm py-3 hover:underline hover:text-accent"
             >About</a
           >
           <a
-            href="#features"
-            class="text-2xl py-3 hover:underline hover:text-accent"
+            href="./pages/services.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
             >Services</a
           >
           <a
-            href="#courses"
-            class="text-2xl py-3 hover:underline hover:text-accent"
+            href="./pages/courses.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
             >Courses</a
           >
           <a
-            href="#contact"
-            class="text-2xl py-3 hover:underline hover:text-accent"
+            href="./pages/contact.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
             >Contact</a
           >
 
@@ -771,29 +771,6 @@
         </div>
       </footer>
 
-    <script>
-      // Get buttons and menu
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const closeMenuButton = document.getElementById("close-menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const navLinks = mobileMenu.querySelectorAll("a"); // Select all navigation links inside the mobile menu
-
-      // Open the menu
-      mobileMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.remove("hidden");
-      });
-
-      // Close the menu
-      closeMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.add("hidden");
-      });
-
-      // Close the menu when any navigation link is clicked
-      navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-        });
-      });
-    </script>
+      <script src="./assets/js/mobile-menu.js"></script>
   </body>
 </html>

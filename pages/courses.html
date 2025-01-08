@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses - Bright Path</title>
+    <link rel="stylesheet" href="../assets/css/output.css" />
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+    <!-- For .ico -->
+    <link rel="icon" href="../assets/images/logo.jpg" type="image/jpg" />
+    <!-- For .png -->
+
+    <style>
+      .selected {
+        background-color: #ffffff;
+        color: #d50100;
+        border-radius: 0.375rem;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    </style>
+
+    <style>
+      /* For Desktop (larger screens) */
+      @media (min-width: 1024px) {
+        .lg\:w-1\/3 {
+          width: 33.3333% !important;
+        }
+        .lg\:w-2\/3 {
+          width: 66.6666% !important;
+        }
+      }
+
+      /* For Mobile (smaller screens) */
+      @media (max-width: 1024px) {
+        .lg\:w-1\/3,
+        .lg\:w-2\/3 {
+          width: 100% !important;
+        }
+
+        .mobile-sidebar {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          height: 100%;
+          width: 80%;
+          z-index: 1000;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-sidebar.open {
+          transform: translateX(0);
+        }
+
+        #filter-btn {
+          display: block;
+        }
+      }
+
+      /* General Styles */
+      .search-bar,
+      .select-box {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn {
+        padding: 12px 24px;
+        background-color: #ff6347;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover {
+        background-color: #e5533d;
+      }
+
+      /* Label Styles */
+      .label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      /* Adjusting layout for smaller screens */
+      @media (max-width: 768px) {
+        .w-full {
+          width: 100% !important;
+        }
+
+        .search-bar {
+          margin-bottom: 1rem;
+        }
+
+        .filter-btn {
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        /* Hide the filter sidebar initially on mobile */
+        .mobile-sidebar {
+          display: none;
+        }
+
+        /* Show it when toggled open */
+        .mobile-sidebar.open {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-accent text-secondary">
+    <!-- Header -->
+    <header class="bg-primary text-white">
+      <div class="container mx-auto flex justify-between items-center p-5">
+        <!-- Logo Section -->
+        <a class="flex items-center text-white">
+          <img
+            src="../assets/images/logo.jpg"
+            alt="Bright Path Logo"
+            class="h-12 w-12 rounded-full bg-white"
+          />
+          <span class="ml-3 text-xl font-bold">Bright Path</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="../index.html" class="hover:text-accent">Home</a>
+          <a href="./about.html" class="hover:text-accent">About</a>
+          <a href="./services.html" class="hover:text-accent">Services</a>
+          <a href="#" class="hover:text-primary selected">Courses</a>
+          <a href="./contact.html" class="hover:text-accent">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA Button -->
+        <div class="hidden md:flex">
+          <button
+            class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
+          >
+            Get Counseling
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-4 h-4 ml-1"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden inline-flex items-center text-white hover:text-accent focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Full-Screen Navigation Menu for Mobile -->
+      <nav
+        id="mobile-menu"
+        class="fixed top-0 left-0 w-full h-full bg-primary text-white hidden flex-col items-center justify-center text-center z-50"
+      >
+        <!-- Close Button -->
+        <button
+          id="close-menu-button"
+          class="absolute top-4 right-6 text-white hover:text-accent focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <!-- Navigation Links for Mobile -->
+        <div class="flex flex-col items-start space-y-4 h-full mt-10 pl-6">
+          <a class="flex items-center text-white">
+            <img
+              src="../assets/images/logo.jpg"
+              alt="Bright Path Logo"
+              class="h-10 w-10 rounded-full bg-white p-1"
+            />
+            <span class="ml-3 text-xl font-bold">Bright Path</span>
+          </a>
+          <a
+            href="../index.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >Home</a
+          >
+          <a
+            href="./about.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >About</a
+          >
+          <a
+            href="./services.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >Services</a
+          >
+          <a
+            href="#"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >Courses</a
+          >
+          <a
+            href="./contact.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >Contact</a
+          >
+
+          <button
+            class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
+          >
+            Get Counseling
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-4 h-4 ml-1"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-[70vh] w-screen bg-cover bg-center"
+      style="
+        background-image: url('https://plus.unsplash.com/premium_photo-1682787494977-d013bb5a8773?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <!-- Overlay (optional for readability) -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <!-- Hero Content -->
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-5"
+      >
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Explore a World of Learning Opportunities
+        </h1>
+        <p class="text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
+          Choose from a wide variety of courses and start your journey with
+          Bright Path. Whether you're advancing your career or learning
+          something new, we’ve got the perfect course for you.
+        </p>
+        <!-- Call-to-Actions -->
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <a
+            href="#courses-section"
+            class="bg-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-red-700 transition"
+          >
+            Explore Courses
+          </a>
+          <a
+            href="#about-us"
+            class="bg-gray-100 text-primary font-medium py-3 px-8 rounded-lg hover:bg-gray-200 transition"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-gray-600 body-font bg-gray-50" id="courses-section">
+      <div class="container px-5 py-24 mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2 class="sm:text-4xl text-3xl font-bold text-gray-900">
+            Explore Our Courses
+          </h2>
+          <p
+            class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
+          >
+            Bright Path offers a variety of courses to help you achieve your
+            educational goals. Explore our courses and start your journey today.
+          </p>
+        </div>
+
+        <!-- Main Layout -->
+        <div class="flex flex-wrap gap-8 mb-12">
+          <!-- Left Sidebar for Filters (Visible on Desktop) -->
+          <div class="lg:w-1/4 w-full mb-4 lg:mb-0">
+            <div class="filter-sidebar p-6 bg-white shadow-lg rounded-lg">
+              <div class="mb-6">
+                <input
+                  type="text"
+                  id="search"
+                  class="search-bar mb-4"
+                  placeholder="Search for courses..."
+                  onkeyup="searchCourses()"
+                />
+              </div>
+
+              <!-- Filter Section -->
+              <div class="w-full flex flex-wrap gap-6 mb-12">
+                <!-- Course Stream Filter -->
+                <div class="w-full mb-4">
+                  <label for="course-stream" class="label">Course Stream</label>
+                  <select id="course-stream" class="select-box">
+                    <option value="">All Streams</option>
+                    <option value="Teaching">Teaching</option>
+                    <option value="Nursing">Nursing</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Management">Management</option>
+                  </select>
+                </div>
+
+                <!-- Course Type Filter -->
+                <div class="w-full mb-4">
+                  <label for="course-type" class="label">Course Type</label>
+                  <select id="course-type" class="select-box">
+                    <option value="">All Types</option>
+                    <option value="Degree">Degree</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Certificate">Certificate</option>
+                  </select>
+                </div>
+
+                <!-- Price Range Filter -->
+                <div class="w-full mb-4">
+                  <label for="price-range" class="label">Price Range</label>
+                  <select id="price-range" class="select-box">
+                    <option value="">All Prices</option>
+                    <option value="under-30000">Under ₹30,000</option>
+                    <option value="30000-50000">₹30,000 - ₹50,000</option>
+                    <option value="above-50000">Above ₹50,000</option>
+                  </select>
+                </div>
+
+                <!-- Duration Filter -->
+                <div class="w-full mb-4">
+                  <label for="duration" class="label">Duration</label>
+                  <select id="duration" class="select-box">
+                    <option value="">All Durations</option>
+                    <option value="1-year">1 Year</option>
+                    <option value="2-years">2 Years</option>
+                    <option value="3-years">3 Years</option>
+                  </select>
+                </div>
+
+                <!-- Session Filter -->
+                <div class="w-full mb-4">
+                  <label for="session" class="label">Session</label>
+                  <select id="session" class="select-box">
+                    <option value="">All Sessions</option>
+                    <option value="2024-2028">2024-2028</option>
+                    <option value="2024-2028">2024-2028</option>
+                    <option value="2024-2028">2024-2028</option>
+                  </select>
+                </div>
+
+                <!-- Apply Filter Button -->
+                <div class="w-full mt-6">
+                  <button
+                    id="filter-btn"
+                    class="filter-btn"
+                    onclick="applyFilters()"
+                  >
+                    Apply Filters
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side for Courses and Pagination (Visible on Desktop) -->
+          <div class="lg:w-2/3 w-full">
+            <!-- Courses Grid -->
+            <div id="courses-grid" class="flex flex-wrap -m-4 mb-8">
+              <!-- Course Card Example -->
+              <div class="lg:w-1/3 md:w-1/2 p-4 course-card">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                  <img
+                    class="w-full h-48 object-cover object-center mb-4 rounded-lg"
+                    src="https://dummyimage.com/720x400"
+                    alt="Course Image"
+                  />
+                  <h3 class="text-lg font-medium text-gray-900 mb-2">
+                    Bachelor of Education (B.Ed)
+                  </h3>
+                  <p class="leading-relaxed text-base text-gray-600 mb-4">
+                    The B.Ed program is designed to provide the skills and
+                    knowledge required to become a successful educator.
+                  </p>
+                  <div class="flex justify-between items-center">
+                    <span class="text-lg font-semibold text-gray-900"
+                      >₹30,000</span
+                    >
+                  </div>
+                  <button
+                    class="mt-4 bg-red-600 text-white w-full py-2 rounded-full hover:bg-red-700"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+
+              <!-- Additional Course Cards Here -->
+            </div>
+
+            <!-- Pagination Status Bar and Controls -->
+            <div class="flex justify-between items-center mt-8">
+              <!-- Status Bar -->
+              <div class="text-gray-600 font-medium">
+                <span id="pagination-status">Page 1 of 4</span>
+              </div>
+
+              <!-- Pagination Controls -->
+              <div>
+                <button
+                  id="prev-btn"
+                  class="bg-gray-200 py-2 px-6 rounded-full text-gray-600 hover:bg-gray-300 focus:outline-none"
+                >
+                  Previous
+                </button>
+                <button
+                  id="next-btn"
+                  class="bg-gray-200 py-2 px-6 rounded-full text-gray-600 hover:bg-gray-300 focus:outline-none ml-4"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses Grid -->
+      <div id="courses-grid" class="flex flex-wrap -m-4 mb-8">
+        <!-- Course Cards will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-12">
+          Why Choose Bright Path for Your College Admission?
+        </h2>
+        <p class="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+          At Bright Path, we offer personalized career counseling and expert
+          guidance to help you find the right college and course. Our team
+          ensures you make an informed decision, ensuring a bright future ahead.
+        </p>
+        <div class="flex flex-wrap justify-center gap-12">
+          <!-- Reason 1: Expert Guidance -->
+          <div class="w-full sm:w-1/3 p-6 bg-white rounded-lg shadow-lg">
+            <div class="mb-6 text-red-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                stroke="none"
+                viewBox="0 0 24 24"
+                class="w-16 h-16 mx-auto"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Expert Guidance
+            </h3>
+            <p class="text-gray-600">
+              Our experienced career counselors offer personalized advice to
+              help you choose the right college and course based on your
+              interests, goals, and capabilities.
+            </p>
+          </div>
+
+          <!-- Reason 2: College Admission Assistance -->
+          <div class="w-full sm:w-1/3 p-6 mt-4 bg-white rounded-lg shadow-lg">
+            <div class="mb-6 text-red-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                stroke="none"
+                viewBox="0 0 24 24"
+                class="w-16 h-16 mx-auto"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              College Admission Assistance
+            </h3>
+            <p class="text-gray-600">
+              We assist you through every step of the college application
+              process, from filling out forms to submitting documents, ensuring
+              a smooth admission experience.
+            </p>
+          </div>
+
+          <!-- Reason 3: Wide Range of Colleges & Courses -->
+          <div class="w-full sm:w-1/3 p-6 mt-4 bg-white rounded-lg shadow-lg">
+            <div class="mb-6 text-red-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                stroke="none"
+                viewBox="0 0 24 24"
+                class="w-16 h-16 mx-auto"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              Wide Range of Colleges & Courses
+            </h3>
+            <p class="text-gray-600">
+              We partner with top colleges offering various streams and courses.
+              Our counselors help you choose the best-fit college based on your
+              profile, preferences, and budget.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-red-600 text-white py-24 text-center">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
+          Ready to Take the Next Step in Your Career?
+        </h2>
+        <p class="text-lg sm:text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+          Whether you’re looking for guidance on selecting the right college or
+          need help with your application process, our expert counselors are
+          here to assist you. Let’s make your college dreams a reality today!
+        </p>
+        <div class="flex justify-center gap-8">
+          <!-- Added gap-8 for spacing between the buttons -->
+          <a
+            href="#contact-section"
+            class="bg-white text-primary font-medium py-3 px-8 rounded-lg text-lg hover:bg-gray-100 transition"
+          >
+            Get Started with Counseling
+          </a>
+          <a
+            href="#courses-section"
+            class="bg-transparent border-2 border-white text-white font-medium py-3 px-8 rounded-lg text-lg hover:bg-white hover:text-primary transition"
+          >
+            Explore Courses
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-gray-600 body-font">
+      <div
+        class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
+      >
+        <!-- Logo and Description -->
+        <div
+          class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left"
+        >
+          <a
+            class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+          >
+            <img
+              src="../assets/images/logo.jpg"
+              alt="Bright Path Logo"
+              class="w-10 h-10 rounded-full"
+            />
+            <span class="ml-3 text-xl">Bright Path</span>
+          </a>
+          <p class="mt-2 text-sm text-gray-500">
+            Empowering students with expert guidance and resources to achieve
+            their dreams.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div
+          class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center"
+        >
+          <!-- Column 1 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              COURSES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Teaching (B.Ed, D.El.Ed)</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Nursing (GNM, ANM)</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Management (BBA, MBA)</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Medical (B.Sc Nursing)</a
+                >
+              </li>
+            </nav>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              ABOUT
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Our Story</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Mission & Vision</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Our Team</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Careers</a>
+              </li>
+            </nav>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              HELP
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">FAQs</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Support</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </nav>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              CONTACT
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >info@brightpath.com</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">+1 234 567 890</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >123 Bright Path Lane</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">California, USA</a>
+              </li>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="bg-gray-100">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-gray-500 text-sm text-center sm:text-left">
+            © 2025 Bright Path —
+            <a
+              href="https://thundergits.com/"
+              rel="noopener noreferrer"
+              class="text-gray-600 ml-1"
+              target="_blank"
+              >Developed By ThunderGits</a
+            >
+          </p>
+          <span
+            class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+          >
+            <a class="text-gray-500 hover:text-primary" href="#">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/mobile-menu.js"></script>
+
+    <script>
+      // Function to toggle the FAQ answers
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqButtons = document.querySelectorAll(".faq-button");
+
+        faqButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const faqContent = this.nextElementSibling; // The answer section
+
+            // Toggle the active state of the FAQ
+            if (
+              faqContent.style.display === "none" ||
+              faqContent.style.display === ""
+            ) {
+              faqContent.style.display = "block";
+            } else {
+              faqContent.style.display = "none";
+            }
+
+            // Optionally, you can add an active class to the button or FAQ item
+            this.classList.toggle("active");
+          });
+        });
+      });
+    </script>
+
+    <script type="module" src="../assets/js/courses.js"></script>
+  </body>
+</html>
