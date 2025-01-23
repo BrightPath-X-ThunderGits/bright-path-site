@@ -211,6 +211,18 @@ document.getElementById("apply-form").addEventListener("submit", (event) => {
 
   console.log("Application Data:", applicationData);
 
+  if (!applicationData.courseName || !applicationData.fullName || !applicationData.email || !applicationData.phone || !applicationData.message) {
+    alert("Please fill out all the fields.");
+    return;
+  }
+
+  const whatsappNumber = "918825273988"; // Replace with your WhatsApp number
+  const text = `Hello Team!, I am ${applicationData.fullName}, my email is ${applicationData.email}, my contact number is ${applicationData.phone}, and my message is: ${applicationData.message}. I want to enroll for ${applicationData.courseName}.`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+  // Open WhatsApp with pre-filled message
+  window.open(whatsappUrl, "_blank");
+
   // You can add API logic here to send the form data to a server
   alert("Your application has been submitted!");
 });

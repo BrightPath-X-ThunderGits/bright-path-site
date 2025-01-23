@@ -311,7 +311,7 @@
       </div>
     </section>
 
-    <section class="text-gray-600 body-font bg-gray-50" id="courses-section">
+    <section class="text-gray-600 body-font bg-gray-50" id="courses-exlorer">
       <div class="container px-5 py-24 mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-16">
@@ -332,6 +332,7 @@
           <div class="lg:w-1/4 w-full mb-4 lg:mb-0">
             <div class="filter-sidebar p-6 bg-white shadow-lg rounded-lg">
               <div class="mb-6">
+                <label for="search" class="label">Search Courses</label>
                 <input
                   type="text"
                   id="search"
@@ -343,72 +344,14 @@
 
               <!-- Filter Section -->
               <div class="w-full flex flex-wrap gap-6 mb-12">
-                <!-- Course Stream Filter -->
+                <!-- Courses List with Checkboxes -->
                 <div class="w-full mb-4">
-                  <label for="course-stream" class="label">Course Stream</label>
-                  <select id="course-stream" class="select-box">
-                    <option value="">All Streams</option>
-                    <option value="Teaching">Teaching</option>
-                    <option value="Nursing">Nursing</option>
-                    <option value="Medical">Medical</option>
-                    <option value="Engineering">Engineering</option>
-                    <option value="Management">Management</option>
-                  </select>
-                </div>
-
-                <!-- Course Type Filter -->
-                <div class="w-full mb-4">
-                  <label for="course-type" class="label">Course Type</label>
-                  <select id="course-type" class="select-box">
-                    <option value="">All Types</option>
-                    <option value="Degree">Degree</option>
-                    <option value="Diploma">Diploma</option>
-                    <option value="Certificate">Certificate</option>
-                  </select>
-                </div>
-
-                <!-- Price Range Filter -->
-                <div class="w-full mb-4">
-                  <label for="price-range" class="label">Price Range</label>
-                  <select id="price-range" class="select-box">
-                    <option value="">All Prices</option>
-                    <option value="under-30000">Under ₹30,000</option>
-                    <option value="30000-50000">₹30,000 - ₹50,000</option>
-                    <option value="above-50000">Above ₹50,000</option>
-                  </select>
-                </div>
-
-                <!-- Duration Filter -->
-                <div class="w-full mb-4">
-                  <label for="duration" class="label">Duration</label>
-                  <select id="duration" class="select-box">
-                    <option value="">All Durations</option>
-                    <option value="1-year">1 Year</option>
-                    <option value="2-years">2 Years</option>
-                    <option value="3-years">3 Years</option>
-                  </select>
-                </div>
-
-                <!-- Session Filter -->
-                <div class="w-full mb-4">
-                  <label for="session" class="label">Session</label>
-                  <select id="session" class="select-box">
-                    <option value="">All Sessions</option>
-                    <option value="2024-2028">2024-2028</option>
-                    <option value="2024-2028">2024-2028</option>
-                    <option value="2024-2028">2024-2028</option>
-                  </select>
-                </div>
-
-                <!-- Apply Filter Button -->
-                <div class="w-full mt-6">
-                  <button
-                    id="filter-btn"
-                    class="filter-btn"
-                    onclick="applyFilters()"
+                  <label for="courses-checkboxes" class="label"
+                    >Select Courses</label
                   >
-                    Apply Filters
-                  </button>
+                  <div id="courses-checkboxes" class="flex flex-col space-y-3">
+                    <!-- Dynamically generated checkboxes will go here -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -417,68 +360,9 @@
           <!-- Right Side for Courses and Pagination (Visible on Desktop) -->
           <div class="lg:w-2/3 w-full">
             <!-- Courses Grid -->
-            <div id="courses-grid" class="flex flex-wrap -m-4 mb-8">
-              <!-- Course Card Example -->
-              <div class="lg:w-1/3 md:w-1/2 p-4 course-card">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                  <img
-                    class="w-full h-48 object-cover object-center mb-4 rounded-lg"
-                    src="https://dummyimage.com/720x400"
-                    alt="Course Image"
-                  />
-                  <h3 class="text-lg font-medium text-gray-900 mb-2">
-                    Bachelor of Education (B.Ed)
-                  </h3>
-                  <p class="leading-relaxed text-base text-gray-600 mb-4">
-                    The B.Ed program is designed to provide the skills and
-                    knowledge required to become a successful educator.
-                  </p>
-                  <div class="flex justify-between items-center">
-                    <span class="text-lg font-semibold text-gray-900"
-                      >₹30,000</span
-                    >
-                  </div>
-                  <button
-                    class="mt-4 bg-red-600 text-white w-full py-2 rounded-full hover:bg-red-700"
-                  >
-                    Apply Now
-                  </button>
-                </div>
-              </div>
-
-              <!-- Additional Course Cards Here -->
-            </div>
-
-            <!-- Pagination Status Bar and Controls -->
-            <div class="flex justify-between items-center mt-8">
-              <!-- Status Bar -->
-              <div class="text-gray-600 font-medium">
-                <span id="pagination-status">Page 1 of 4</span>
-              </div>
-
-              <!-- Pagination Controls -->
-              <div>
-                <button
-                  id="prev-btn"
-                  class="bg-gray-200 py-2 px-6 rounded-full text-gray-600 hover:bg-gray-300 focus:outline-none"
-                >
-                  Previous
-                </button>
-                <button
-                  id="next-btn"
-                  class="bg-gray-200 py-2 px-6 rounded-full text-gray-600 hover:bg-gray-300 focus:outline-none ml-4"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
+            <div id="courses-grid" class="flex flex-wrap -m-4 mb-8"></div>
           </div>
         </div>
-      </div>
-
-      <!-- Courses Grid -->
-      <div id="courses-grid" class="flex flex-wrap -m-4 mb-8">
-        <!-- Course Cards will be dynamically inserted here -->
       </div>
     </section>
 
@@ -637,22 +521,30 @@
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
+                <a
+                  href="./courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
                   >Teaching (B.Ed, D.El.Ed)</a
                 >
               </li>
               <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
+                <a
+                  href="./courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
                   >Nursing (GNM, ANM)</a
                 >
               </li>
               <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
+                <a
+                  href="./courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
                   >Management (BBA, MBA)</a
                 >
               </li>
               <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
+                <a
+                  href="./courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
                   >Medical (B.Sc Nursing)</a
                 >
               </li>
@@ -668,18 +560,32 @@
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a href="./about.html#our-story" class="text-gray-600 hover:text-gray-800">Our Story</a>
+                <a
+                  href="./about.html#our-story"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Our Story</a
+                >
               </li>
               <li>
-                <a href="./about.html#mission-vision" class="text-gray-600 hover:text-gray-800"
+                <a
+                  href="./about.html#mission-vision"
+                  class="text-gray-600 hover:text-gray-800"
                   >Mission & Vision</a
                 >
               </li>
               <li>
-                <a href="./about.html#our-team" class="text-gray-600 hover:text-gray-800">Our Team</a>
+                <a
+                  href="./about.html#our-team"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Our Team</a
+                >
               </li>
               <li>
-                <a href="./about.html#students-feedback" class="text-gray-600 hover:text-gray-800">Careers</a>
+                <a
+                  href="./about.html#students-feedback"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Careers</a
+                >
               </li>
             </nav>
           </div>
@@ -693,7 +599,11 @@
             </h2>
             <nav class="list-none mb-10">
               <li>
-                <a href="./about.html#faq-section" class="text-gray-600 hover:text-gray-800">FAQs</a>
+                <a
+                  href="./about.html#faq-section"
+                  class="text-gray-600 hover:text-gray-800"
+                  >FAQs</a
+                >
               </li>
               <li>
                 <a class="text-gray-600 hover:text-gray-800">Support</a>
@@ -726,12 +636,15 @@
                 <a class="text-gray-600 hover:text-gray-800">+91 88252 73988</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800"
-                  >Musrigharari</a
-                >
+                <a class="text-gray-600 hover:text-gray-800">+91 74795 56604</a>
               </li>
               <li>
-                <a class="text-gray-600 hover:text-gray-800">Samastipur, Bihar, India, 848101</a>
+                <a class="text-gray-600 hover:text-gray-800">Musrigharari, Satanpur Road, Near Petrol Pump</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Samastipur, Bihar, India, 848101</a
+                >
               </li>
             </nav>
           </div>
@@ -756,7 +669,7 @@
           <span
             class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
           >
-            <a class="text-gray-500 hover:text-primary" href="#">
+            <a class="text-gray-500 hover:text-primary" href="https://www.facebook.com/profile.php?id=61571780450204" target="_blank">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -770,7 +683,7 @@
                 ></path>
               </svg>
             </a>
-            <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+            <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -783,8 +696,8 @@
                   d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
                 ></path>
               </svg>
-            </a>
-            <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+            </a> -->
+            <a class="ml-3 text-gray-500 hover:text-primary" href="https://www.instagram.com/bright_path04/" target="_blank">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -800,7 +713,7 @@
                 ></path>
               </svg>
             </a>
-            <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+            <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -816,7 +729,7 @@
                 ></path>
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
-            </a>
+            </a> -->
           </span>
         </div>
       </div>
