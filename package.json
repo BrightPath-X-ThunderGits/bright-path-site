@@ -1,7 +1,7 @@
 {
   "name": "bright-path",
   "version": "1.0.0",
-  "description": "Bright Path project",
+  "description": "The Bright Path project",
   "scripts": {},
   "main": "postcss.config.js",
   "keywords": [],

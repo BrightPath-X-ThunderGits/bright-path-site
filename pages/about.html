@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - Bright Path</title>
+    <title>About - The Bright Path</title>
     <link rel="stylesheet" href="../assets/css/output.css" />
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
     <!-- For .ico -->
@@ -21,6 +21,121 @@
     </style>
   </head>
   <body class="bg-accent text-secondary">
+    <!-- Enquiry Form -->
+    <div
+      id="inquiry-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden"
+    >
+      <div class="relative bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
+        <!-- Close Button -->
+        <button
+          id="close-modal"
+          class="absolute top-4 right-3 text-gray-500 hover:text-red-700 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <!-- Modal Header -->
+        <h2 class="text-2xl font-bold text-primary mb-3 text-center">
+          Enquiry Form
+        </h2>
+        <p class="text-gray-600 text-center mb-6">
+          Please fill out the form below, and we’ll get back to you shortly.
+        </p>
+
+        <!-- Form -->
+        <form id="inquiry-form">
+          <!-- Name Field -->
+          <div class="mb-4">
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <!-- Mobile Number Field -->
+          <div class="mb-4">
+            <label
+              for="mobile"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Mobile Number</label
+            >
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              placeholder="Enter your mobile number"
+              required
+            />
+          </div>
+
+          <!-- Email Field -->
+          <div class="mb-4">
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <!-- Course Dropdown -->
+          <div class="mb-6">
+            <label
+              for="course"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Select Course</label
+            >
+            <select
+              id="course"
+              name="course"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              required
+            >
+              <option value="" disabled selected>Select a course</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-primary text-white py-3 rounded-lg text-lg font-medium hover:bg-red-700 transition focus:outline-none"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
     <!-- Header -->
     <header class="bg-primary text-white">
       <div class="container mx-auto flex justify-between items-center p-5">
@@ -28,10 +143,10 @@
         <a href="../index.html" class="flex items-center text-white">
           <img
             src="../assets/images/logo.jpg"
-            alt="Bright Path Logo"
+            alt="The Bright Path Logo"
             class="h-12 w-12 rounded-full bg-white"
           />
-          <span class="ml-3 text-xl font-bold">Bright Path</span>
+          <span class="ml-3 text-xl font-bold">The Bright Path</span>
         </a>
 
         <!-- Desktop Navigation Links -->
@@ -117,10 +232,10 @@
           <a href="../index.html" class="flex items-center text-white">
             <img
               src="../assets/images/logo.jpg"
-              alt="Bright Path Logo"
+              alt="The Bright Path Logo"
               class="h-10 w-10 rounded-full bg-white p-1"
             />
-            <span class="ml-3 text-xl font-bold">Bright Path</span>
+            <span class="ml-3 text-xl font-bold">The Bright Path</span>
           </a>
           <a
             href="../index.html"
@@ -182,7 +297,7 @@
             छात्रों को सशक्त बनाना, Building Futures
           </h1>
           <p class="mb-8 leading-relaxed text-lg">
-            Bright Path आपके शैक्षिक सफलता और करियर लक्ष्यों को प्राप्त करने में
+            The Bright Path आपके शैक्षिक सफलता और करियर लक्ष्यों को प्राप्त करने में
             आपका विश्वसनीय साथी है। विशेषज्ञ मार्गदर्शन और व्यापक संसाधनों के
             साथ, हम हर कदम पर आपकी सहायता करते हैं।.
           </p>
@@ -198,7 +313,7 @@
         <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
           <img
             class="object-cover object-center rounded"
-            alt="Bright Path Hero"
+            alt="The Bright Path Hero"
             src="https://plus.unsplash.com/premium_photo-1679936310007-92904bc7b405?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
         </div>
@@ -218,7 +333,7 @@
         <p
           class="text-lg leading-relaxed mb-8 text-gray-700 text-center lg:w-2/3 w-full"
         >
-          Bright Path एक दृष्टिकोण से उत्पन्न हुआ था, जिसका उद्देश्य students की
+          The Bright Path एक दृष्टिकोण से उत्पन्न हुआ था, जिसका उद्देश्य students की
           aspirations और उनके achievements के बीच का अंतर बताना था। 2020 में
           अपनी स्थापना के बाद से, हम खुद को समर्पित करते हुए students को expert
           guidance, comprehensive courses, और unparalleled support प्रदान कर रहे
@@ -236,7 +351,7 @@
           <div class="lg:w-1/2 w-full">
             <ul class="list-disc text-left ml-5">
               <li class="mb-4">
-                <strong>2015:</strong> Bright Path was founded with a mission to
+                <strong>2015:</strong> The Bright Path was founded with a mission to
                 guide students.
               </li>
               <li class="mb-4">
@@ -248,7 +363,7 @@
                 provide unparalleled opportunities.
               </li>
               <li>
-                <strong>Today:</strong> Bright Path continues to transform the
+                <strong>Today:</strong> The Bright Path continues to transform the
                 lives of thousands of students.
               </li>
             </ul>
@@ -267,7 +382,7 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-            Bright Path में, हम हर छात्र के लिए quality education और expert
+            The Bright Path में, हम हर छात्र के लिए quality education और expert
             guidance को सुलभ बनाने की कोशिश करते हैं। यही वो प्रेरणा है जो हमें
             हर दिन आगे बढ़ने के लिए प्रेरित करती है।
           </p>
@@ -375,7 +490,7 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-            Bright Path में, हमारे core values हमारे मिशन को आकार देते हैं और
+            The Bright Path में, हमारे core values हमारे मिशन को आकार देते हैं और
             हमें हर छात्र को excellence प्रदान करने में मार्गदर्शन करते हैं।
           </p>
         </div>
@@ -740,7 +855,7 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-            Bright Path एक प्रेरित और अनुभवी टीम द्वारा संचालित है, जो students
+            The Bright Path एक प्रेरित और अनुभवी टीम द्वारा संचालित है, जो students
             को सशक्त बनाने और उज्जवल भविष्य गढ़ने के लिए समर्पित है।
           </p>
         </div>
@@ -762,7 +877,7 @@
                 Founder & Chief Executive Officer
               </p>
               <p class="leading-relaxed text-gray-700">
-                Sahbaz Sir के पास छात्रों को सशक्त बनाने का एक दृष्टिकोण है, और
+                Shahwaz Sir के पास छात्रों को सशक्त बनाने का एक दृष्टिकोण है, और
                 वह innovative education solutions के क्षेत्र में अग्रणी रहे हैं।
               </p>
               <div class="mt-4 flex space-x-3">
@@ -862,7 +977,7 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-            Bright Path के मार्गदर्शन के साथ सफलता की दिशा में अपने पहले कदम
+            The Bright Path के मार्गदर्शन के साथ सफलता की दिशा में अपने पहले कदम
             बढ़ाने वाले छात्रों से सुनें।.
           </p>
         </div>
@@ -876,7 +991,7 @@
             >
               <div>
                 <p class="leading-relaxed text-lg text-gray-700">
-                  "Bright Path ने मुझे मेरी करियर पसंद को आसानी से समझने में मदद
+                  "The Bright Path ने मुझे मेरी करियर पसंद को आसानी से समझने में मदद
                   की। उनका मार्गदर्शन मेरी सफलता में महत्वपूर्ण था!"
                 </p>
                 <div class="flex items-center mt-6">
@@ -901,7 +1016,7 @@
             >
               <div>
                 <p class="leading-relaxed text-lg text-gray-700">
-                  "Bright Path में जो workshops और courses थे, वे शानदार थे।
+                  "The Bright Path में जो workshops और courses थे, वे शानदार थे।
                   उन्होंने मुझे वह आत्मविश्वास और skills दीं जो मुझे चाहिए थीं।"
                 </p>
                 <div class="flex items-center mt-6">
@@ -926,7 +1041,7 @@
             >
               <div>
                 <p class="leading-relaxed text-lg text-gray-700">
-                  "Bright Path का करियर मार्गदर्शन अमूल्य था। उनकी टीम ने मेरी
+                  "The Bright Path का करियर मार्गदर्शन अमूल्य था। उनकी टीम ने मेरी
                   सपनों की यूनिवर्सिटी में सीट प्राप्त करने में मदद की!"
                 </p>
                 <div class="flex items-center mt-6">
@@ -951,7 +1066,7 @@
             href="#"
             class="bg-red-600 text-white py-3 px-8 rounded-full text-lg font-medium hover:bg-red-700 transition"
           >
-            Contact Bright Path Today
+            Contact The Bright Path Today
           </a>
         </div>
       </div>
@@ -967,7 +1082,7 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-          कोई सवाल है, मदद चाहिए, या Bright Path के बारे में और जानना चाहते हैं? हम आपकी मदद के लिए यहाँ हैं। आज ही हमसे संपर्क करें!
+          कोई सवाल है, मदद चाहिए, या The Bright Path के बारे में और जानना चाहते हैं? हम आपकी मदद के लिए यहाँ हैं। आज ही हमसे संपर्क करें!
           </p>
         </div>
 
@@ -1065,7 +1180,7 @@
               frameborder="0"
               marginheight="0"
               marginwidth="0"
-              title="Bright Path Location"
+              title="The Bright Path Location"
               scrolling="no"
               src="https://maps.google.com/maps?q=Post%20Office%20Musrigharari,%20RP3Q%2B9W6,%20Musrigharari,%20Bishwambhar%20Pur%20Aloth,%20Bihar%20848103&ie=UTF8&t=&z=16&iwloc=B&output=embed"
               style="
@@ -1101,7 +1216,7 @@
               class="w-full text-left faq-button px-6 py-4 text-lg font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 hover:bg-red-50 transition-all duration-300 ease-in-out"
               type="button"
             >
-              <span>Bright Path कौन-कौन से कोर्सेस प्रदान करता है?</span>
+              <span>The Bright Path कौन-कौन से कोर्सेस प्रदान करता है?</span>
             </button>
             <div
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
@@ -1117,7 +1232,7 @@
               class="w-full text-left faq-button px-6 py-4 text-lg font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 hover:bg-red-50 transition-all duration-300 ease-in-out"
               type="button"
             >
-              <span>Bright Path में कोर्स के लिए कैसे आवेदन कर सकते हैं?</span>
+              <span>The Bright Path में कोर्स के लिए कैसे आवेदन कर सकते हैं?</span>
             </button>
             <div
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
@@ -1173,7 +1288,7 @@
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
               style="display: none"
             >
-            जी हां, Bright Path पात्र छात्रों के लिए financial aid options प्रदान करता है। आप हमारी Financial Aid page पर जाकर और जानकारी प्राप्त कर सकते हैं।
+            जी हां, The Bright Path पात्र छात्रों के लिए financial aid options प्रदान करता है। आप हमारी Financial Aid page पर जाकर और जानकारी प्राप्त कर सकते हैं।
             </div>
           </div>
         </div>
@@ -1188,7 +1303,7 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-          Bright Path के विभिन्न programs, events, और student success stories को हमारे visual gallery के माध्यम से एक्सप्लोर करें।
+          The Bright Path के विभिन्न programs, events, और student success stories को हमारे visual gallery के माध्यम से एक्सप्लोर करें।
           </p>
         </div>
 
@@ -1301,10 +1416,10 @@
           >
             <img
               src="../assets/images/logo.jpg"
-              alt="Bright Path Logo"
+              alt="The Bright Path Logo"
               class="w-10 h-10 rounded-full"
             />
-            <span class="ml-3 text-xl">Bright Path</span>
+            <span class="ml-3 text-xl">The Bright Path</span>
           </a>
           <p class="mt-2 text-sm text-gray-500">
             Empowering students with expert guidance and resources to achieve
@@ -1463,7 +1578,7 @@
           class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
         >
           <p class="text-gray-500 text-sm text-center sm:text-left">
-            © 2025 Bright Path —
+            © 2025 The Bright Path —
             <a
               href="https://thundergits.com/"
               rel="noopener noreferrer"
@@ -1578,5 +1693,6 @@
     </script>
     <script src="../assets/js/whatsApp-integration.js"></script>
     <script src="../assets/js/gallery-carousel.js"></script>
+    <script type="module" src="../assets/js/enquiry-modal.js"></script>
   </body>
 </html>
