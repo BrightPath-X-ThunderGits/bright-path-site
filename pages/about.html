@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="../assets/css/output.css" />
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
     <script src="../assets/js/quick-enquiry-btn.js"></script>
-    <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css">
+    <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css" />
     <script src="../assets/js/quick-enquiry-btn.js"></script>
-    <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css">
+    <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css" />
     <!-- Load Chatbot Styles -->
-    <link rel="stylesheet" href="../assets/css/chatbot.css">
+    <link rel="stylesheet" href="../assets/css/chatbot.css" />
     <script type="module" src="../assets/js/renderChatBot.js"></script>
     <!-- For .ico -->
     <link rel="icon" href="../assets/images/logo.jpg" type="image/jpg" />
@@ -28,11 +28,14 @@
   </head>
   <body class="bg-accent text-secondary">
     <!-- Include Chatbot -->
-<div id="chatbot-container"></div>
+    <div id="chatbot-container"></div>
     <!-- Quick Enquiry Floating Button -->
-<div id="quick-enquiry" class="fixed right-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white py-3 px-4 rounded-l-lg cursor-pointer shadow-lg">
-  Quick Enquiry
-</div>
+    <div
+      id="quick-enquiry"
+      class="fixed right-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white py-3 px-4 rounded-l-lg cursor-pointer shadow-lg"
+    >
+      Quick Enquiry
+    </div>
     <!-- Enquiry Form -->
     <div
       id="inquiry-modal"
@@ -146,6 +149,97 @@
             Submit
           </button>
         </form>
+      </div>
+    </div>
+    <!-- Offer Popup -->
+    <div
+      id="offer-popup"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden px-4"
+    >
+      <div
+        class="relative rounded-2xl shadow-2xl p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl w-full text-center bg-cover bg-center"
+        style="
+          background-image: url('../assets/images/dfdf.jpg');
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
+
+        <!-- Content -->
+        <div class="relative z-10">
+          <!-- Header -->
+          <div
+            class="flex justify-between items-center pb-4 border-b border-gray-300"
+          >
+            <button
+              id="close-offer"
+              class="text-white hover:text-red-300 focus:outline-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Offer Title -->
+          <h2
+            style="color: #fde047"
+            class="text-2xl sm:text-2xl md:text-3xl font-extrabold text-yellow-400 mt-5"
+          >
+            🎉 Exclusive B.Ed Admission Offer 🎉
+          </h2>
+
+          <!-- Offer Details -->
+          <p class="text-sm sm:text-lg font-semibold text-white mt-3 py-2">
+            Get Admission in
+            <span style="color: #fde047" class="text-yellow-300 font-extrabold"
+              >Uttar Pradesh Government Universities</span
+            >
+            <br />उत्तर प्रदेश के सरकारी विश्वविद्यालयों में प्रवेश लें!
+          </p>
+
+          <p
+            style="color: #86efac"
+            class="text-xl sm:text-2xl md:text-3xl text-green-300 font-bold my-3"
+          >
+            मात्र ₹80,000 /- में
+          </p>
+          <p class="text-white text-sm sm:text-sm py-2">दोनों वर्षों के लिए!</p>
+
+          <p
+            class="text-xl sm:text-2xl md:text-3xl text-gray-300 leading-relaxed mt-3"
+            style="color: #fde047"
+          >
+            🚀
+            <span class="font-semibold text-yellow-300"
+              >Limited Time Offer!</span
+            >
+          </p>
+
+          <!-- CTA Button -->
+          <div class="mt-6">
+            <button
+              id="claim-offer"
+              style="background-color: #facc15"
+              class="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-3 rounded-lg text-lg font-semibold transition-all focus:outline-none shadow-lg transform hover:scale-105 active:scale-95"
+            >
+              Claim Your Admission Now 🚀
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Header -->
@@ -309,9 +403,9 @@
             छात्रों को सशक्त बनाना, Building Futures
           </h1>
           <p class="mb-8 leading-relaxed text-lg">
-            The Bright Path आपके शैक्षिक सफलता और करियर लक्ष्यों को प्राप्त करने में
-            आपका विश्वसनीय साथी है। विशेषज्ञ मार्गदर्शन और व्यापक संसाधनों के
-            साथ, हम हर कदम पर आपकी सहायता करते हैं।.
+            The Bright Path आपके शैक्षिक सफलता और करियर लक्ष्यों को प्राप्त करने
+            में आपका विश्वसनीय साथी है। विशेषज्ञ मार्गदर्शन और व्यापक संसाधनों
+            के साथ, हम हर कदम पर आपकी सहायता करते हैं।.
           </p>
           <div class="flex justify-center">
             <button
@@ -345,11 +439,11 @@
         <p
           class="text-lg leading-relaxed mb-8 text-gray-700 text-center lg:w-2/3 w-full"
         >
-          The Bright Path एक दृष्टिकोण से उत्पन्न हुआ था, जिसका उद्देश्य students की
-          aspirations और उनके achievements के बीच का अंतर बताना था। 2020 में
-          अपनी स्थापना के बाद से, हम खुद को समर्पित करते हुए students को expert
-          guidance, comprehensive courses, और unparalleled support प्रदान कर रहे
-          हैं।
+          The Bright Path एक दृष्टिकोण से उत्पन्न हुआ था, जिसका उद्देश्य
+          students की aspirations और उनके achievements के बीच का अंतर बताना था।
+          2020 में अपनी स्थापना के बाद से, हम खुद को समर्पित करते हुए students
+          को expert guidance, comprehensive courses, और unparalleled support
+          प्रदान कर रहे हैं।
         </p>
         <!-- Image and Timeline -->
         <div class="flex lg:flex-row flex-col gap-8 items-center">
@@ -363,8 +457,8 @@
           <div class="lg:w-1/2 w-full">
             <ul class="list-disc text-left ml-5">
               <li class="mb-4">
-                <strong>2015:</strong> The Bright Path was founded with a mission to
-                guide students.
+                <strong>2015:</strong> The Bright Path was founded with a
+                mission to guide students.
               </li>
               <li class="mb-4">
                 <strong>2020:</strong> Expanded to offer over 500+ courses
@@ -375,8 +469,8 @@
                 provide unparalleled opportunities.
               </li>
               <li>
-                <strong>Today:</strong> The Bright Path continues to transform the
-                lives of thousands of students.
+                <strong>Today:</strong> The Bright Path continues to transform
+                the lives of thousands of students.
               </li>
             </ul>
           </div>
@@ -502,8 +596,8 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-            The Bright Path में, हमारे core values हमारे मिशन को आकार देते हैं और
-            हमें हर छात्र को excellence प्रदान करने में मार्गदर्शन करते हैं।
+            The Bright Path में, हमारे core values हमारे मिशन को आकार देते हैं
+            और हमें हर छात्र को excellence प्रदान करने में मार्गदर्शन करते हैं।
           </p>
         </div>
 
@@ -867,8 +961,8 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-            The Bright Path एक प्रेरित और अनुभवी टीम द्वारा संचालित है, जो students
-            को सशक्त बनाने और उज्जवल भविष्य गढ़ने के लिए समर्पित है।
+            The Bright Path एक प्रेरित और अनुभवी टीम द्वारा संचालित है, जो
+            students को सशक्त बनाने और उज्जवल भविष्य गढ़ने के लिए समर्पित है।
           </p>
         </div>
 
@@ -884,7 +978,9 @@
                 src="../assets/images/sahbaz.jpeg"
                 alt="Team Member 1"
               />
-              <h3 class="text-xl font-medium text-gray-900">Mr. Shahwaz Hussain</h3>
+              <h3 class="text-xl font-medium text-gray-900">
+                Mr. Shahwaz Hussain
+              </h3>
               <p class="text-gray-600 text-sm mb-4">
                 Founder & Chief Executive Officer
               </p>
@@ -935,7 +1031,9 @@
                 src="../assets/images/suman.jpeg"
                 alt="Team Member 2"
               />
-              <h3 class="text-xl font-medium text-gray-900">Mr. Suman Choudhary</h3>
+              <h3 class="text-xl font-medium text-gray-900">
+                Mr. Suman Choudhary
+              </h3>
               <p class="text-gray-600 text-sm mb-4">
                 Founder & Chief Academic Officer
               </p>
@@ -1003,8 +1101,8 @@
             >
               <div>
                 <p class="leading-relaxed text-lg text-gray-700">
-                  "The Bright Path ने मुझे मेरी करियर पसंद को आसानी से समझने में मदद
-                  की। उनका मार्गदर्शन मेरी सफलता में महत्वपूर्ण था!"
+                  "The Bright Path ने मुझे मेरी करियर पसंद को आसानी से समझने में
+                  मदद की। उनका मार्गदर्शन मेरी सफलता में महत्वपूर्ण था!"
                 </p>
                 <div class="flex items-center mt-6">
                   <img
@@ -1053,8 +1151,8 @@
             >
               <div>
                 <p class="leading-relaxed text-lg text-gray-700">
-                  "The Bright Path का करियर मार्गदर्शन अमूल्य था। उनकी टीम ने मेरी
-                  सपनों की यूनिवर्सिटी में सीट प्राप्त करने में मदद की!"
+                  "The Bright Path का करियर मार्गदर्शन अमूल्य था। उनकी टीम ने
+                  मेरी सपनों की यूनिवर्सिटी में सीट प्राप्त करने में मदद की!"
                 </p>
                 <div class="flex items-center mt-6">
                   <img
@@ -1094,7 +1192,8 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-          कोई सवाल है, मदद चाहिए, या The Bright Path के बारे में और जानना चाहते हैं? हम आपकी मदद के लिए यहाँ हैं। आज ही हमसे संपर्क करें!
+            कोई सवाल है, मदद चाहिए, या The Bright Path के बारे में और जानना
+            चाहते हैं? हम आपकी मदद के लिए यहाँ हैं। आज ही हमसे संपर्क करें!
           </p>
         </div>
 
@@ -1173,15 +1272,14 @@
             below:
           </p>
           <p class="text-lg font-medium text-gray-900 mb-4">
-            <strong>Phone:</strong> +91 88252 73988,
-            +91 74795 56604
+            <strong>Phone:</strong> +91 88252 73988, +91 74795 56604
           </p>
           <p class="text-lg font-medium text-gray-900 mb-4">
             <strong>Email:</strong> info.brightpath04@gmail.com
           </p>
           <p class="text-lg font-medium text-gray-900">
-            <strong>Address:</strong> Musrigharari, Satanpur Road, Near Petrol Pump
-            Samastipur, Bihar, India, 848101
+            <strong>Address:</strong> Musrigharari, Satanpur Road, Near Petrol
+            Pump Samastipur, Bihar, India, 848101
           </p>
 
           <!-- Map Embed -->
@@ -1215,8 +1313,8 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-     
-कोई सवाल है? हमने आपकी मदद के लिए कुछ सामान्य पूछे जाने वाले सवालों को संकलित किया है, ताकि आप शुरुआत कर सकें।
+            कोई सवाल है? हमने आपकी मदद के लिए कुछ सामान्य पूछे जाने वाले सवालों
+            को संकलित किया है, ताकि आप शुरुआत कर सकें।
           </p>
         </div>
 
@@ -1234,7 +1332,8 @@
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
               style="display: none"
             >
-            हम विभिन्न कोर्सेस प्रदान करते हैं, जिनमें B.Ed, GNM, ANM, और कई अन्य professional और academic प्रोग्राम शामिल हैं।
+              हम विभिन्न कोर्सेस प्रदान करते हैं, जिनमें B.Ed, GNM, ANM, और कई
+              अन्य professional और academic प्रोग्राम शामिल हैं।
             </div>
           </div>
 
@@ -1244,13 +1343,16 @@
               class="w-full text-left faq-button px-6 py-4 text-lg font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 hover:bg-red-50 transition-all duration-300 ease-in-out"
               type="button"
             >
-              <span>The Bright Path में कोर्स के लिए कैसे आवेदन कर सकते हैं?</span>
+              <span
+                >The Bright Path में कोर्स के लिए कैसे आवेदन कर सकते हैं?</span
+              >
             </button>
             <div
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
               style="display: none"
             >
-            आप सीधे हमारे वेबसाइट के माध्यम से आवेदन कर सकते हैं, आवेदन फॉर्म भरकर। अधिक जानकारी के लिए, हमारी "Apply Now" सेक्शन पर जाएं।
+              आप सीधे हमारे वेबसाइट के माध्यम से आवेदन कर सकते हैं, आवेदन फॉर्म
+              भरकर। अधिक जानकारी के लिए, हमारी "Apply Now" सेक्शन पर जाएं।
             </div>
           </div>
 
@@ -1266,7 +1368,8 @@
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
               style="display: none"
             >
-            जी हां, हमारे सभी courses recognized educational bodies और institutions द्वारा accredited हैं।
+              जी हां, हमारे सभी courses recognized educational bodies और
+              institutions द्वारा accredited हैं।
             </div>
           </div>
 
@@ -1276,15 +1379,15 @@
               class="w-full text-left faq-button px-6 py-4 text-lg font-semibold text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-600 hover:bg-red-50 transition-all duration-300 ease-in-out"
               type="button"
             >
-              <span>
-                छात्रों के लिए कौन सा support उपलब्ध है?</span>
+              <span> छात्रों के लिए कौन सा support उपलब्ध है?</span>
             </button>
             <div
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
               style="display: none"
             >
-              
-हम 24/7 support प्रदान करते हैं online platforms, career counseling, mentorship programs, और personalized guidance के माध्यम से।
+              हम 24/7 support प्रदान करते हैं online platforms, career
+              counseling, mentorship programs, और personalized guidance के
+              माध्यम से।
             </div>
           </div>
 
@@ -1300,7 +1403,9 @@
               class="faq-content px-6 pt-4 pb-4 text-gray-700"
               style="display: none"
             >
-            जी हां, The Bright Path पात्र छात्रों के लिए financial aid options प्रदान करता है। आप हमारी Financial Aid page पर जाकर और जानकारी प्राप्त कर सकते हैं।
+              जी हां, The Bright Path पात्र छात्रों के लिए financial aid options
+              प्रदान करता है। आप हमारी Financial Aid page पर जाकर और जानकारी
+              प्राप्त कर सकते हैं।
             </div>
           </div>
         </div>
@@ -1315,7 +1420,8 @@
           <p
             class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
           >
-          The Bright Path के विभिन्न programs, events, और student success stories को हमारे visual gallery के माध्यम से एक्सप्लोर करें।
+            The Bright Path के विभिन्न programs, events, और student success
+            stories को हमारे visual gallery के माध्यम से एक्सप्लोर करें।
           </p>
         </div>
 

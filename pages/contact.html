@@ -150,6 +150,99 @@
         </form>
       </div>
     </div>
+
+    <!-- Offer Popup -->
+    <div
+      id="offer-popup"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden px-4"
+    >
+      <div
+        class="relative rounded-2xl shadow-2xl p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl w-full text-center bg-cover bg-center"
+        style="
+          background-image: url('../assets/images/dfdf.jpg');
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
+
+        <!-- Content -->
+        <div class="relative z-10">
+          <!-- Header -->
+          <div
+            class="flex justify-between items-center pb-4 border-b border-gray-300"
+          >
+            <button
+              id="close-offer"
+              class="text-white hover:text-red-300 focus:outline-none"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Offer Title -->
+          <h2
+            style="color: #fde047"
+            class="text-2xl sm:text-2xl md:text-3xl font-extrabold text-yellow-400 mt-5"
+          >
+            🎉 Exclusive B.Ed Admission Offer 🎉
+          </h2>
+
+          <!-- Offer Details -->
+          <p class="text-sm sm:text-lg font-semibold text-white mt-3 py-2">
+            Get Admission in
+            <span style="color: #fde047" class="text-yellow-300 font-extrabold"
+              >Uttar Pradesh Government Universities</span
+            >
+            <br />उत्तर प्रदेश के सरकारी विश्वविद्यालयों में प्रवेश लें!
+          </p>
+
+          <p
+            style="color: #86efac"
+            class="text-xl sm:text-2xl md:text-3xl text-green-300 font-bold my-3"
+          >
+            मात्र ₹80,000 /- में
+          </p>
+          <p class="text-white text-sm sm:text-sm py-2">दोनों वर्षों के लिए!</p>
+
+          <p
+            class="text-xl sm:text-2xl md:text-3xl text-gray-300 leading-relaxed mt-3"
+            style="color: #fde047"
+          >
+            🚀
+            <span class="font-semibold text-yellow-300"
+              >Limited Time Offer!</span
+            >
+          </p>
+
+          <!-- CTA Button -->
+          <div class="mt-6">
+            <button
+              id="claim-offer"
+              style="background-color: #facc15"
+              class="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-3 rounded-lg text-lg font-semibold transition-all focus:outline-none shadow-lg transform hover:scale-105 active:scale-95"
+            >
+              Claim Your Admission Now 🚀
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <!-- Header -->
     <header class="bg-primary text-white">
       <div class="container mx-auto flex justify-between items-center p-5">
