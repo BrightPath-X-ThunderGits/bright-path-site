@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - The Bright Path</title>
+    <title>Safalta Sangam - The Bright Path</title>
     <link rel="stylesheet" href="../assets/css/output.css" />
     <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
     <script src="../assets/js/quick-enquiry-btn.js"></script>
@@ -52,15 +52,14 @@
         <nav class="hidden md:flex space-x-8">
           <a href="../index.html" class="hover:text-accent">Home</a>
           <a href="./about.html" class="hover:text-accent">About</a>
-          <a href="#" class="hover:text-primary selected">Services</a>
+          <a href="./services.html" class="hover:text-accent">Services</a>
           <a href="./courses.html" class="hover:text-accent">Courses</a>
-          <a href="./contact.html" class="hover:text-accent">Contact</a>
+          <a href="#" class="hover:text-primary selected">Contact</a>
         </nav>
 
         <!-- Desktop CTA Button -->
         <div class="hidden md:flex">
           <button
-            onclick="window.location.href='./contact.html';"
             class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
           >
             Get Counseling
@@ -147,7 +146,7 @@
             >About</a
           >
           <a
-            href="#"
+            href="./services.html"
             class="text-sm py-3 hover:underline hover:text-accent"
             >Services</a
           >
@@ -157,13 +156,12 @@
             >Courses</a
           >
           <a
-            href="./contact.html"
+            href="#"
             class="text-sm py-3 hover:underline hover:text-accent"
             >Contact</a
           >
 
           <button
-            onclick="window.location.href='./contact.html';"
             class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
           >
             Get Counseling
@@ -183,382 +181,179 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section bg-gray-800 text-white relative" style="height: 70vh;">
-        <!-- Background Image -->
-        <div
-          class="absolute inset-0 bg-cover bg-center opacity-75"
-          style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop');"
-        ></div>
+    <section class="relative h-[70vh] bg-cover bg-center" style="background-image: url('../assets/images/library.jpeg');">
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        
         <!-- Content -->
-        <div class="relative container mx-auto px-6 flex flex-col justify-center items-center text-center z-10 h-full">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span class="text-yellow-400">Digital World</span> Computer Academy <br />
-            <span>Learn. Grow. Excel.</span>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col justify-center items-center text-center h-full text-white">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            <span class="text-yellow-400">Safalta Sangam Library</span> में आपका स्वागत है
           </h1>
-          <p class="text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-            डिजिटल स्किल्स सीखें और अपने करियर को नई ऊंचाइयों पर ले जाएं। <br />
-            Master <span class="text-yellow-300">Computer Basics</span>, 
-            <span class="text-yellow-300">Tally</span>, and <span class="text-yellow-300">Web Development</span> 
-            with hands-on training.
+          <p class="text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
+            ज्ञान का भंडार जहां आपको सफलता के लिए जरूरी हर संसाधन मिलेगा। Discover a wide range of books, journals, और 
+            resources जो आपकी growth को inspire करें।
           </p>
-          <a href="#courses" class="bg-primary hover:bg-yellow-600 text-white py-3 px-8 rounded-lg font-medium shadow-lg transition">
-            Explore Courses | कोर्स देखें
-          </a>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="../index.html#about-services" class="bg-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-yellow-500 transition">
+              Explore Collection
+            </a>
+            <a href="#become-member" class="bg-transparent border-2 border-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition">
+              Apply For Membership
+            </a>
+          </div>
         </div>
       </section>
 
       <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
           <!-- Section Header -->
-          <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
-              About Digital World Computer Academy
+          <div class="flex flex-col text-center w-full mb-20">
+            <h2 class="text-xs text-red-500 tracking-widest font-medium title-font mb-1">SAFALTA SANGAM LIBRARY</h2>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+              Explore a World of Knowledge and Resources
             </h1>
-            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
-              Digital World Computer Academy का उद्देश्य छात्रों और पेशेवरों को डिजिटल कौशल में प्रशिक्षित करना है। 
-              हमारे अत्याधुनिक लैब और अनुभवी शिक्षकों के साथ, आप अपने करियर को एक नई दिशा दे सकते हैं।
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-700">
+              पढ़ाई के लिए एक शांत माहौल, अद्वितीय संसाधन और डिजिटल सुविधा। Whether you're preparing for competitive exams or just love reading, we have it all.
             </p>
           </div>
       
-          <!-- Features Section -->
+          <!-- Features Grid -->
           <div class="flex flex-wrap -m-4">
             <!-- Feature 1 -->
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2L12 22M5 12H19"></path>
-                  </svg>
+            <div class="p-4 md:w-1/3">
+              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                <div class="flex items-center mb-3">
+                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-gray-900 text-lg title-font font-medium">Extensive Book Collection</h2>
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Expert Faculty</h2>
-                <p class="leading-relaxed text-base">
-                  अनुभवी शिक्षकों से मार्गदर्शन प्राप्त करें, जो आपको व्यावसायिक और व्यक्तिगत सफलता के लिए तैयार करेंगे।
-                </p>
+                <div class="flex-grow">
+                  <p class="leading-relaxed text-base">
+                    Competitive exams और academic success के लिए सभी आवश्यक किताबें और journals उपलब्ध हैं।
+                  </p>
+                </div>
               </div>
             </div>
       
             <!-- Feature 2 -->
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                  </svg>
+            <div class="p-4 md:w-1/3">
+              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                <div class="flex items-center mb-3">
+                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <circle cx="12" cy="7" r="4"></circle>
+                      <path d="M12 14v8"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-gray-900 text-lg title-font font-medium">Peaceful Study Environment</h2>
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Modern Labs</h2>
-                <p class="leading-relaxed text-base">
-                  अत्याधुनिक कंप्यूटर लैब और उपकरणों के साथ व्यावहारिक अनुभव प्राप्त करें।
-                </p>
+                <div class="flex-grow">
+                  <p class="leading-relaxed text-base">
+                    A distraction-free और productive ambiance, जहां focus और motivation बनाए रखना आसान है।
+                  </p>
+                </div>
               </div>
             </div>
       
             <!-- Feature 3 -->
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
+            <div class="p-4 md:w-1/3">
+              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+                <div class="flex items-center mb-3">
+                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                      <path d="M3 10h18M3 14h18"></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-gray-900 text-lg title-font font-medium">Digital Access and Wi-Fi</h2>
+                </div>
+                <div class="flex-grow">
+                  <p class="leading-relaxed text-base">
+                    Free Wi-Fi और डिजिटल संसाधन जैसे e-books और journals, आपकी learning को और आसान बनाते हैं।
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-gray-600 body-font bg-gray-50">
+        <div class="container px-5 py-24 mx-auto">
+          <!-- Section Header -->
+          <div class="flex flex-col text-center w-full mb-20">
+            <h2 class="text-xs text-red-500 tracking-widest font-medium title-font mb-1">MEMBERSHIP BENEFITS</h2>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+              क्यों जुड़ें Safalta Sangam Library से?
+            </h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-700">
+              एक बेहतर सीखने का अनुभव पाएं, जहां आपको शिक्षा के हर पहलू में सहायता मिले। Discover the perks of being a part of our library community.
+            </p>
+          </div>
+      
+          <!-- Benefits Grid -->
+          <div class="flex flex-wrap -m-4">
+            <!-- Benefit 1 -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 8v4m0 4h.01"></path>
                   </svg>
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Flexible Timings</h2>
-                <p class="leading-relaxed text-base">
-                  अपनी सुविधा के अनुसार दिन और समय चुनें। लचीलापन आपकी सफलता का मार्ग है।
+                <h2 class="text-lg font-medium text-gray-900 mb-2">Affordable Membership Plans</h2>
+                <p class="leading-relaxed text-center">
+                  ₹200/महीना से शुरू होकर किफायती प्लान्स। Enjoy unlimited access to books, digital resources, and study spaces.
                 </p>
               </div>
             </div>
       
-            <!-- Feature 4 -->
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
+            <!-- Benefit 2 -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
+                    <path d="M3 10h18M3 14h18"></path>
+                  </svg>
+                </div>
+                <h2 class="text-lg font-medium text-gray-900 mb-2">Exclusive Study Spaces</h2>
+                <p class="leading-relaxed text-center">
+                  शांत और आरामदायक study zones। Dedicated cabins और group study rooms उपलब्ध हैं।
+                </p>
+              </div>
+            </div>
+      
+            <!-- Benefit 3 -->
+            <div class="p-4 md:w-1/3">
+              <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                   </svg>
                 </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Industry-Relevant Courses</h2>
-                <p class="leading-relaxed text-base">
-                  इंडस्ट्री की मांगों को ध्यान में रखकर तैयार किए गए कोर्स। 
-                  यह आपके कौशल को अपग्रेड करने का सही अवसर है।
-                </p>
-              </div>
-            </div>
-      
-            <!-- Feature 5 -->
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    class="w-6 h-6"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
-                    />
-                  </svg>
-                </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Practical Training</h2>
-                <p class="leading-relaxed text-base">
-                  लाइव प्रोजेक्ट्स और प्रैक्टिकल अनुभव के साथ 
-                  अपने कौशल को मजबूत करें।
+                <h2 class="text-lg font-medium text-gray-900 mb-2">24/7 Library Access</h2>
+                <p class="leading-relaxed text-center">
+                  Flexible timings for everyone! चाहे सुबह हो या रात, पढ़ाई कभी नहीं रुकेगी।
                 </p>
               </div>
             </div>
           </div>
       
-          <!-- Button -->
-          <button class="flex mx-auto mt-16 text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Explore Our Courses
-          </button>
-        </div>
-      </section>
-
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <!-- Section Header -->
-          <div class="flex flex-col">
-            <div class="h-1 bg-gray-200 rounded overflow-hidden">
-              <div class="w-24 h-full bg-indigo-500"></div>
-            </div>
-            <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-              <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0">
-                Explore Our Courses | हमारे कोर्स
-              </h1>
-              <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
-                Digital World Computer Academy में डिजिटल स्किल्स के लिए डिज़ाइन किए गए कोर्स उपलब्ध हैं। 
-                अपनी पसंद का कोर्स चुनें और सीखने का नया अनुभव प्राप्त करें।
-              </p>
-            </div>
-          </div>
-      
-          <!-- Courses Grid -->
-          <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-            <!-- Course 1 -->
-            <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  class="object-cover object-center h-full w-full"
-                  src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </div>
-              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">ADCA</h2>
-              <p class="text-base leading-relaxed mt-2">
-                Advanced Diploma in Computer Applications - डिजिटल दुनिया का एडवांस ज्ञान।
-              </p>
-              <a href="/courses/adca" class="text-indigo-500 inline-flex items-center mt-3">
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-      
-            <!-- Course 2 -->
-            <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  class="object-cover object-center h-full w-full"
-                  src="https://plus.unsplash.com/premium_photo-1687572807160-b5262826e4df?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </div>
-              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">DCA</h2>
-              <p class="text-base leading-relaxed mt-2">
-                Diploma in Computer Applications - कंप्यूटर की बेसिक जानकारी के लिए एक आदर्श कोर्स।
-              </p>
-              <a href="/courses/dca" class="text-indigo-500 inline-flex items-center mt-3">
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
-      
-            <!-- Course 3 -->
-            <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-              <div class="rounded-lg h-64 overflow-hidden">
-                <img
-                  alt="content"
-                  class="object-cover object-center h-full w-full"
-                  src="https://images.unsplash.com/photo-1518976024611-28bf4b48222e?q=80&w=2785&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                />
-              </div>
-              <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Tally</h2>
-              <p class="text-base leading-relaxed mt-2">
-                Accounting & Business Management - व्यवसाय के लिए अकाउंटिंग सॉफ़्टवेयर।
-              </p>
-              <a href="/courses/tally" class="text-indigo-500 inline-flex items-center mt-3">
-                Learn More
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4 ml-2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
-            </div>
+          <!-- Call to Action -->
+          <div class="mt-12 text-center">
+            <a
+              href="#become-member"
+              class="bg-red-600 text-white py-3 px-8 rounded-lg text-lg font-medium hover:bg-red-700 transition"
+            >
+              Become a Member
+            </a>
           </div>
         </div>
       </section>
-           <!-- Testimonial Section  -->
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <!-- Title and Description -->
-        <div
-          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
-        >
-          <h1
-            class="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary"
-          >
-            What Our Students Say
-          </h1>
-          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
-            हमारे छात्रों की प्रेरणादायक कहानियां देखें और जानें कि कैसे The
-            Bright Path ने उनके करियर और भविष्य को बदल दिया है।
-          </p>
-        </div>
-
-        <!-- Video Testimonials Grid -->
-        <div class="flex flex-wrap -m-4">
-          <!-- Testimonial 1 -->
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
-                <iframe
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/jZBeIUqwtek"
-                  title="Testimonial Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                Sanava Praveen
-              </h2>
-              <p class="leading-relaxed text-base">
-                "The Bright Path मेरे लिए एक जीवन बदलने वाला अनुभव रहा है।
-                Mentors और resources ने मुझे मेरे सपनों को हासिल करने में मदद
-                की।"
-              </p>
-            </div>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
-                <iframe
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/HxVNL-T_49I"
-                  title="Testimonial Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                Rahul Kumar 
-              </h2>
-              <p class="leading-relaxed text-base">
-                "The Bright Path से मुझे जो समर्थन और मार्गदर्शन मिला, वह
-                अद्वितीय रहा है। हर छात्र के लिए अत्यधिक सिफारिश की जाती है!"
-              </p>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
-                <iframe
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/mZcivvwiyMU"
-                  title="Testimonial Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-               Kriti Kumari 
-              </h2>
-              <p class="leading-relaxed text-base">
-                "The Bright Path सच में अपने छात्रों की सफलता के बारे में चिंता
-                करता है। कोर्स और मार्गदर्शन शानदार हैं!"
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
       <section class="text-gray-600 body-font bg-gray-50">
         <div class="container px-5 py-24 mx-auto">
@@ -568,7 +363,7 @@
             <p
               class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
             >
-            The Bright Path के विभिन्न programs, events, और student success stories को हमारे visual gallery के माध्यम से एक्सप्लोर करें।
+            Safalta Sangam के विभिन्न programs, events, और student success stories को हमारे visual gallery के माध्यम से एक्सप्लोर करें।
             </p>
           </div>
   
@@ -594,28 +389,28 @@
               <div class="carousel-item w-full">
                 <img
                   class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/acedmic01.jpeg"
+                  src="../assets/images/events/e3.jpeg"
                   alt="Gallery Image 3"
                 />
               </div>
               <div class="carousel-item w-full">
                 <img
                   class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/acdemic-05.jpeg"
+                  src="../assets/images/events/e4.jpeg"
                   alt="Gallery Image 4"
                 />
               </div>
               <div class="carousel-item w-full">
                 <img
                   class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/acdemin-02.jpeg"
+                  src="../assets/images/events/e5.jpeg"
                   alt="Gallery Image 5"
                 />
               </div>
               <div class="carousel-item w-full">
                 <img
                   class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/acdemin-02.jpeg"
+                  src="../assets/images/library.jpeg"
                   alt="Gallery Image 6"
                 />
               </div>
@@ -666,6 +461,116 @@
           </div>
         </div>
       </section>
+
+
+      <section id="become-member" class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-12">
+            <h2
+              class="text-xs text-red-600 tracking-widest font-medium title-font mb-1"
+            >
+              APPLY NOW
+            </h2>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+              Apply for Membership
+            </h1>
+          </div>
+          <div class="lg:w-1/2 md:w-2/3 mx-auto">
+            <form id="apply-form" class="flex flex-wrap -m-2">
+              <!-- Full Name -->
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="full-name" class="leading-7 text-sm text-gray-600"
+                    >Full Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="full-name"
+                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="email" class="leading-7 text-sm text-gray-600"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- Phone Number -->
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="phone" class="leading-7 text-sm text-gray-600"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    id="number"
+                    name="phone"
+                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- Message -->
+              <div class="p-2 w-full">
+                <div class="relative">
+                  <label for="message" class="leading-7 text-sm text-gray-600"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  ></textarea>
+                </div>
+              </div>
+              <!-- Submit Button -->
+              <div class="p-2 w-full mt-4">
+                <button
+                onclick="sendToWhatsApp()"
+                  type="submit"
+                  class="flex mx-auto text-white bg-red-600 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 rounded text-lg"
+                >
+                  Submit Application
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    
+    
+
+
+    <!-- <section class="flex items-center justify-center h-[80vh] bg-gray-100 px-4">
+      <div class="text-center max-w-3xl py-24">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+          Contact Us Page is Work in Progress
+        </h1>
+    
+        <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-8">
+          We're working hard to bring you an amazing experience. Stay tuned for updates!
+        </p>
+    
+        <a
+          href="/"
+          class="bg-primary text-white font-medium py-3 px-6 rounded-lg text-sm sm:text-base hover:bg-red-700 transition"
+        >
+          Back to Home
+        </a>
+      </div>
+    </section> -->
 
     <!-- CTA Section  -->
     <section
@@ -929,6 +834,8 @@
     </footer>
 
     <script src="../assets/js/mobile-menu.js"></script>
+
+    <script src="../assets/js/whatsApp-integration.js"></script>
     <script src="../assets/js/gallery-carousel.js"></script>
   </body>
 </html>
