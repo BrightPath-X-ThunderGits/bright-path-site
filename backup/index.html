@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Bright Path - Guiding Your Path to Success</title>
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <script src="./assets/js/quick-enquiry-btn.js"></script>
+    <link rel="stylesheet" href="./assets/css/quick-enquiry-btn.css" />
+    <!-- Load Chatbot Styles -->
+    <link rel="stylesheet" href="../assets/css/chatbot.css" />
+    <script>
+      fetch("./pages/chatbot.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("chatbot-container").innerHTML = html;
+          const script = document.createElement("script");
+          script.src = "../assets/js/chatbot.js";
+          document.body.appendChild(script);
+        });
+    </script>
+    <!-- For .ico -->
+    <link rel="icon" href="./assets/images/logo.jpg" type="image/jpg" />
+    <!-- For .png -->
+  </head>
+  <body class="bg-accent text-secondary">
+    <!-- Include Chatbot -->
+    <div id="chatbot-container"></div>
+    <!-- Quick Enquiry Floating Button -->
+    <div
+      id="quick-enquiry"
+      class="fixed right-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white py-3 px-4 rounded-l-lg cursor-pointer shadow-lg"
+    >
+      Quick Enquiry
+    </div>
+    <!-- Enquiry Form -->
+    <div
+      id="inquiry-modal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden"
+    >
+      <div class="relative bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
+        <!-- Close Button -->
+        <button
+          id="close-modal"
+          class="absolute top-4 right-3 text-gray-500 hover:text-red-700 focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <!-- Modal Header -->
+        <h2 class="text-2xl font-bold text-primary mb-3 text-center">
+          Enquiry Form
+        </h2>
+        <p class="text-gray-600 text-center mb-6">
+          Please fill out the form below, and we’ll get back to you shortly.
+        </p>
+
+        <!-- Form -->
+        <form id="inquiry-form">
+          <!-- Name Field -->
+          <div class="mb-4">
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <!-- Mobile Number Field -->
+          <div class="mb-4">
+            <label
+              for="mobile"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Mobile Number</label
+            >
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              placeholder="Enter your mobile number"
+              required
+            />
+          </div>
+
+          <!-- Email Field -->
+          <div class="mb-4">
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <!-- Course Dropdown -->
+          <div class="mb-6">
+            <label
+              for="course"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Select Course</label
+            >
+            <select
+              id="course"
+              name="course"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              required
+            >
+              <option value="" disabled selected>Select a course</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full bg-primary text-white py-3 rounded-lg text-lg font-medium hover:bg-red-700 transition focus:outline-none"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+<!-- Offer Popup -->
+<div
+    id="offer-popup"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden px-4"
+>
+    <div 
+        class="relative rounded-2xl shadow-2xl p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl w-full text-center bg-cover bg-center" 
+        style="background-image: url('./assets/images/dfdf.jpg'); background-size: cover; background-position: center;"
+    >
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
+
+        <!-- Content -->
+        <div class="relative z-10">
+            <!-- Header -->
+            <div class="flex justify-between items-center pb-4 border-b border-gray-300">
+                <button id="close-offer" class="text-white hover:text-red-300 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Offer Title -->
+            <h2 style="color: #fde047;" class="text-2xl sm:text-2xl md:text-3xl font-extrabold text-yellow-400 mt-5">
+                🎉 Exclusive B.Ed Admission Offer 🎉  
+            </h2>
+
+            <!-- Offer Details -->
+            <p class="text-sm sm:text-lg font-semibold text-white mt-3 py-2">
+                Get Admission in  
+                <span style="color: #fde047;" class="text-yellow-300 font-extrabold">Uttar Pradesh Government Universities</span>  
+                <br>उत्तर प्रदेश के सरकारी विश्वविद्यालयों में प्रवेश लें!
+            </p>
+
+            <p style="color: #86efac;" class="text-xl sm:text-2xl md:text-3xl text-green-300 font-bold my-3">
+                मात्र ₹80,000 /- में
+            </p>
+            <p class="text-white text-sm sm:text-sm py-2">दोनों वर्षों के लिए!</p>
+
+            <p class="text-xl sm:text-2xl md:text-3xl text-gray-300 leading-relaxed mt-3" style="color: #fde047;">
+                🚀 <span class="font-semibold text-yellow-300">Limited Time Offer!</span>
+            </p>
+
+            <!-- CTA Button -->
+            <div class="mt-6">
+                <button
+                    id="claim-offer"
+                    style="background-color: #facc15;"
+                    class="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-3 rounded-lg text-lg font-semibold transition-all focus:outline-none shadow-lg transform hover:scale-105 active:scale-95"
+                >
+                    Claim Your Admission Now 🚀
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+    <!-- Header -->
+    <header class="bg-primary text-white">
+      <div class="container mx-auto flex justify-between items-center p-5">
+        <!-- Logo Section -->
+        <a class="flex items-center text-white" href="#">
+          <img
+            src="assets/images/logo.jpg"
+            alt="The Bright Path Logo"
+            class="h-12 w-12 rounded-full bg-white"
+          />
+          <span class="ml-3 text-xl font-bold">The Bright Path</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex space-x-8">
+          <a href="#" class="hover:text-accent">Home</a>
+          <a href="./pages/about.html" class="hover:text-accent">About</a>
+          <a href="./pages/services.html" class="hover:text-accent">Services</a>
+          <a href="./pages/courses.html" class="hover:text-accent">Courses</a>
+          <a href="./pages/contact.html" class="hover:text-accent">Contact</a>
+        </nav>
+
+        <!-- Desktop CTA Button -->
+        <div class="hidden md:flex">
+          <button
+            onclick="window.location.href='./pages/contact.html';"
+            class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
+          >
+            Get Counseling
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-4 h-4 ml-1"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden inline-flex items-center text-white hover:text-accent focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Full-Screen Navigation Menu for Mobile -->
+      <nav
+        id="mobile-menu"
+        class="fixed top-0 left-0 w-full h-full bg-primary text-white hidden flex-col items-center justify-center text-center z-50"
+      >
+        <!-- Close Button -->
+        <button
+          id="close-menu-button"
+          class="absolute top-4 right-6 text-white hover:text-accent focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="w-8 h-8"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <!-- Navigation Links for Mobile -->
+        <div class="flex flex-col items-start space-y-4 h-full mt-10 pl-6">
+          <a class="flex items-center text-white">
+            <img
+              src="assets/images/logo.jpg"
+              alt="The Bright Path Logo"
+              class="h-10 w-10 rounded-full bg-white p-1"
+            />
+            <span class="ml-3 text-xl font-bold">The Bright Path</span>
+          </a>
+          <a href="#" class="text-sm py-3 hover:underline hover:text-accent"
+            >Home</a
+          >
+          <a
+            href="./pages/about.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >About</a
+          >
+          <a
+            href="./pages/services.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >Services</a
+          >
+          <a
+            href="./pages/courses.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >Courses</a
+          >
+          <a
+            href="./pages/contact.html"
+            class="text-sm py-3 hover:underline hover:text-accent"
+            >Contact</a
+          >
+
+          <button
+            onclick="window.location.href='./pages/contact.html';"
+            class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
+          >
+            Get Counseling
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-4 h-4 ml-1"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative h-[70vh] w-screen bg-cover bg-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <!-- Overlay (optional for readability) -->
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      <!-- Hero Content -->
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-5"
+      >
+        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+          Empowering Your The Bright Path
+        </h1>
+        <p class="text-lg md:text-xl mb-8 leading-relaxed max-w-3xl">
+          अपनी क्षमता को The Bright Path के साथ खोजें। Expert guidance,
+          personalized mentoring, और top-notch resources आपके सपनों को हासिल
+          करने में मदद करेंगे।.
+        </p>
+        <!-- Call-to-Actions -->
+        <div class="flex flex-col md:flex-row items-center gap-4">
+          <a href="#course-section">
+            <button
+              class="bg-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-red-700 transition"
+            >
+              Get Started
+            </button>
+          </a>
+          <a href="./pages/courses.html#courses-exlorer">
+            <button
+              class="bg-gray-100 text-primary font-medium py-3 px-8 rounded-lg hover:bg-gray-200 transition"
+            >
+              Learn More
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose US Section -->
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <!-- Title and Description -->
+        <div
+          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+        >
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary"
+          >
+            Why Choose The Bright Path?
+          </h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+            The Bright Path छात्रों को expert guidance, उच्च-गुणवत्ता वाले
+            resources, और personalized mentoring के माध्यम से सशक्त बनाने के लिए
+            प्रतिबद्ध है, ताकि वे अपने शैक्षिक और करियर के लक्ष्यों को प्राप्त
+            कर सकें।
+          </p>
+        </div>
+
+        <!-- Features -->
+        <div class="flex flex-wrap -m-4">
+          <!-- Feature 1 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="border border-gray-200 p-6 rounded-lg">
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                Expert Mentorship
+              </h2>
+              <p class="leading-relaxed text-base">
+                Industry के experts और experienced mentors से सीखें, जो हर कदम
+                पर आपका मार्गदर्शन करेंगे और आपको सही दिशा में ले जाएंगे।
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="border border-gray-200 p-6 rounded-lg">
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path
+                    d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                Comprehensive Courses
+              </h2>
+              <p class="leading-relaxed text-base">
+                विभिन्न learners की जरूरतों को पूरा करने के लिए डिज़ाइन किए गए,
+                विशेष रूप से तैयार किए गए courses की विस्तृत श्रृंखला तक पहुँच
+                प्राप्त करें।
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="border border-gray-200 p-6 rounded-lg">
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                Personalized Support
+              </h2>
+              <p class="leading-relaxed text-base">
+                Tailored सलाह और support ताकि आप informed decisions ले सकें for
+                a brighter future.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="border border-gray-200 p-6 rounded-lg">
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"
+                  ></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                Innovative Tools
+              </h2>
+              <p class="leading-relaxed text-base">
+                Leverage advanced tools और resources ताकि learning और
+                application processes seamless बन सके।.
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="border border-gray-200 p-6 rounded-lg">
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                Trusted Platform
+              </h2>
+              <p class="leading-relaxed text-base">
+                Join हजारों satisfied students जिन्होंने success achieve की है
+                The Bright Path के साथ।
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="border border-gray-200 p-6 rounded-lg">
+              <div
+                class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-2">
+                Global Reach
+              </h2>
+              <p class="leading-relaxed text-base">
+                Access opportunities और resources जो globe भर में फैले हैं for
+                limitless possibilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section  -->
+    <section id="course-section" class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <!-- Title and Description -->
+        <div class="flex flex-wrap w-full mb-20">
+          <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+            <h1
+              class="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary"
+            >
+              Our Courses
+            </h1>
+            <div class="h-1 w-20 bg-primary rounded"></div>
+          </div>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+            Explore हमारी wide range of courses, जो designed हैं ताकि आप
+            teaching, nursing, और various other professional fields में excel कर
+            सकें।
+          </p>
+        </div>
+
+        <!-- Courses Grid -->
+        <div class="flex flex-wrap -m-4">
+          <!-- Teaching Courses -->
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img
+                class="h-40 rounded w-full object-cover object-center mb-6"
+                src="https://plus.unsplash.com/premium_photo-1681248156500-8f209e8e466e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Teaching Courses"
+              />
+              <h3
+                class="tracking-widest text-indigo-500 text-xs font-medium title-font"
+              >
+                TEACHING
+              </h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                B.Ed, D.El.Ed
+              </h2>
+              <p class="leading-relaxed text-base">
+                Start your journey in education with हमारे B.Ed और D.El.Ed
+                programs, जो designed हैं aspiring teachers के लिए।
+              </p>
+            </div>
+          </div>
+
+          <!-- Nursing Courses -->
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img
+                class="h-40 rounded w-full object-cover object-center mb-6"
+                src="https://plus.unsplash.com/premium_photo-1677165654854-a62b469ef44f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Nursing Courses"
+              />
+              <h3
+                class="tracking-widest text-indigo-500 text-xs font-medium title-font"
+              >
+                NURSING
+              </h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                GNM, ANM
+              </h2>
+              <p class="leading-relaxed text-base">
+                Gain expertise in nursing with हमारे comprehensive GNM और ANM
+                courses for a fulfilling healthcare career.
+              </p>
+            </div>
+          </div>
+
+          <!-- Medical Courses -->
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img
+                class="h-40 rounded w-full object-cover object-center mb-6"
+                src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Medical Courses"
+              />
+              <h3
+                class="tracking-widest text-indigo-500 text-xs font-medium title-font"
+              >
+                MEDICAL
+              </h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                B.Sc Nursing
+              </h2>
+              <p class="leading-relaxed text-base">
+                हमारे B.Sc Nursing कार्यक्रम के साथ चिकित्सा क्षेत्र में करियर
+                बनाएं, जो aspiring healthcare professionals के लिए तैयार किया
+                गया है।.
+              </p>
+            </div>
+          </div>
+
+          <!-- Management Courses -->
+          <div class="xl:w-1/4 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <img
+                class="h-40 rounded w-full object-cover object-center mb-6"
+                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Management Courses"
+              />
+              <h3
+                class="tracking-widest text-indigo-500 text-xs font-medium title-font"
+              >
+                MANAGEMENT
+              </h3>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                BBA, MBA
+              </h2>
+              <p class="leading-relaxed text-base">
+                हमारे BBA और MBA कार्यक्रमों के साथ व्यापार और प्रबंधन की दुनिया
+                में कदम रखें, जो भविष्य के नेताओं के लिए हैं।
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process Section  -->
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <!-- Title and Description -->
+        <div
+          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+        >
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-4 text-primary"
+          >
+            Our Process
+          </h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+            The Bright Path की सरल प्रक्रिया यह सुनिश्चित करती है कि हर छात्र को
+            सफलता पाने के लिए आवश्यक मार्गदर्शन और संसाधन मिलें। हमारे साथ अपनी
+            यात्रा शुरू करने के लिए इन सरल कदमों का पालन करें।
+          </p>
+        </div>
+
+        <!-- Process Steps -->
+        <div class="flex flex-wrap w-full">
+          <div class="lg:w-2/5 md:w-1/2 md:pr-10 md:py-6">
+            <!-- Step 1 -->
+            <div class="flex relative pb-12">
+              <div
+                class="h-full w-10 absolute inset-0 flex items-center justify-center"
+              >
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              </div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="flex-grow pl-4">
+                <h2
+                  class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider"
+                >
+                  STEP 1
+                </h2>
+                <p class="leading-relaxed">
+                  हमारे courses की range का अन्वेषण करें और वह program खोजें जो
+                  आपके goals और interests के अनुसार हो।
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex relative pb-12">
+              <div
+                class="h-full w-10 absolute inset-0 flex items-center justify-center"
+              >
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              </div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <div class="flex-grow pl-4">
+                <h2
+                  class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider"
+                >
+                  STEP 2
+                </h2>
+                <p class="leading-relaxed">
+                  हमारे expert advisors के साथ एक consultation बुक करें ताकि
+                  आपको आपके अगले कदम के लिए personalized guidance मिल सके।
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex relative pb-12">
+              <div
+                class="h-full w-10 absolute inset-0 flex items-center justify-center"
+              >
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              </div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="5" r="3"></circle>
+                  <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                </svg>
+              </div>
+              <div class="flex-grow pl-4">
+                <h2
+                  class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider"
+                >
+                  STEP 3
+                </h2>
+                <p class="leading-relaxed">
+                  अपने चुने हुए course में enroll करें और top-quality learning
+                  resources तक पहुंच प्राप्त करें।
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex relative pb-12">
+              <div
+                class="h-full w-10 absolute inset-0 flex items-center justify-center"
+              >
+                <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+              </div>
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="flex-grow pl-4">
+                <h2
+                  class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider"
+                >
+                  STEP 4
+                </h2>
+                <p class="leading-relaxed">
+                  The Bright Path के साथ अपनी यात्रा शुरू करें और एक उज्जवल
+                  भविष्य की ओर पहला कदम बढ़ाएं।
+                </p>
+              </div>
+            </div>
+
+            <!-- Finish -->
+            <div class="flex relative">
+              <div
+                class="flex-shrink-0 w-10 h-10 rounded-full bg-primary inline-flex items-center justify-center text-white relative z-10"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+              </div>
+              <div class="flex-grow pl-4">
+                <h2
+                  class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider"
+                >
+                  FINISH
+                </h2>
+                <p class="leading-relaxed">
+                  अपनी सफलता का जश्न मनाएं और भविष्य के अवसरों के लिए हमारे
+                  alumni network से जुड़े रहें।
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <img
+            class="lg:w-3/5 md:w-1/2 object-cover object-center rounded-lg md:mt-0 mt-12"
+            src="https://plus.unsplash.com/premium_photo-1682787494853-63e4dc03285b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="The Bright Path Process"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section  -->
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <!-- Title and Description -->
+        <div
+          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+        >
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary"
+          >
+            Our Impact
+          </h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+            The Bright Path ने हजारों छात्रों को उनके शैक्षिक लक्ष्यों को
+            प्राप्त करने में सक्षम बनाया है। अब तक हमने जो हासिल किया है, वह
+            यहां है।.
+          </p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="flex flex-wrap -m-4 text-center">
+          <!-- Stat 1 -->
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+              <h2 class="title-font font-medium text-3xl text-gray-900">
+                10,000+
+              </h2>
+              <p class="leading-relaxed">Students Guided</p>
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+              <h2 class="title-font font-medium text-3xl text-gray-900">95%</h2>
+              <p class="leading-relaxed">Success Rate</p>
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+              <h2 class="title-font font-medium text-3xl text-gray-900">
+                500+
+              </h2>
+              <p class="leading-relaxed">Courses Offered</p>
+            </div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+              <h2 class="title-font font-medium text-3xl text-gray-900">
+                100+
+              </h2>
+              <p class="leading-relaxed">Universities Partnered</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-services" class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <!-- Section Header -->
+        <div class="flex flex-col">
+          <div class="h-1 bg-gray-200 rounded overflow-hidden">
+            <div class="w-24 h-full bg-primary"></div>
+          </div>
+          <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
+            <h1
+              class="sm:w-2/5 text-gray-900 font-medium title-font text-3xl mb-2 sm:mb-0"
+            >
+              About Our Services | हमारे सेवाओं के बारे में
+            </h1>
+            <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">
+              The Bright Path का उद्देश्य आपके शैक्षिक और करियर की जरूरतों को
+              पूरा करना है। हम
+              <span class="text-primary font-medium">Career Counseling</span>,
+              <span class="text-primary font-medium">Computer Education</span>,
+              और
+              <span class="text-primary font-medium"
+                >Library (Self Study Point) Services</span
+              >
+              जैसी सेवाएं प्रदान करते हैं।
+            </p>
+          </div>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          <!-- Service 1 -->
+          <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="Career Counseling"
+                class="object-cover object-center h-full w-full"
+                src="https://plus.unsplash.com/premium_photo-1663079426406-1b82fed16a79?q=80&w=3015&auto=format&fit=crop"
+              />
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">
+              Career Counseling & College Admission
+            </h2>
+            <p class="text-base leading-relaxed mt-2">
+              सही करियर चुनने और कॉलेज एडमिशन पाने के लिए व्यक्तिगत मार्गदर्शन।
+              The Bright Path हर कदम पर आपके साथ है।
+            </p>
+            <a
+              href="../index.html"
+              class="text-primary inline-flex items-center mt-3"
+            >
+              Learn More
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="Computer Education"
+                class="object-cover object-center h-full w-full"
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2940&auto=format&fit=crop"
+              />
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">
+              Digital World Computer Academy
+            </h2>
+            <p class="text-base leading-relaxed mt-2">
+              डिजिटल युग में कदम रखने के लिए कंप्यूटर शिक्षा प्राप्त करें। सभी
+              उम्र के छात्रों के लिए पाठ्यक्रम।
+            </p>
+            <a
+              href="./pages/computer-academy.html"
+              class="text-primary inline-flex items-center mt-3"
+            >
+              Learn More
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
+            <div class="rounded-lg h-64 overflow-hidden">
+              <img
+                alt="Library Services"
+                class="object-cover object-center h-full w-full"
+                src="./assets/images/library.jpeg"
+              />
+            </div>
+            <h2 class="text-xl font-medium title-font text-gray-900 mt-5">
+              Safalta Sangam Library
+            </h2>
+            <p class="text-base leading-relaxed mt-2">
+              प्रतियोगी परीक्षाओं और शैक्षणिक अध्ययन के लिए एक व्यापक पुस्तकालय
+              सुविधा।
+            </p>
+            <a
+              href="./pages/library.html"
+              class="text-primary inline-flex items-center mt-3"
+            >
+              Learn More
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section  -->
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <!-- Title and Description -->
+        <div
+          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
+        >
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary"
+          >
+            What Our Students Say
+          </h1>
+          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+            हमारे छात्रों की प्रेरणादायक कहानियां देखें और जानें कि कैसे The
+            Bright Path ने उनके करियर और भविष्य को बदल दिया है।
+          </p>
+        </div>
+
+        <!-- Video Testimonials Grid -->
+        <div class="flex flex-wrap -m-4">
+          <!-- Testimonial 1 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                  title="Testimonial Video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                John Doe
+              </h2>
+              <p class="leading-relaxed text-base">
+                "The Bright Path मेरे लिए एक जीवन बदलने वाला अनुभव रहा है।
+                Mentors और resources ने मुझे मेरे सपनों को हासिल करने में मदद
+                की।"
+              </p>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                  title="Testimonial Video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                Jane Smith
+              </h2>
+              <p class="leading-relaxed text-base">
+                "The Bright Path से मुझे जो समर्थन और मार्गदर्शन मिला, वह
+                अद्वितीय रहा है। हर छात्र के लिए अत्यधिक सिफारिश की जाती है!"
+              </p>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="xl:w-1/3 md:w-1/2 p-4">
+            <div class="bg-gray-100 p-6 rounded-lg">
+              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                  title="Testimonial Video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+                Michael Johnson
+              </h2>
+              <p class="leading-relaxed text-base">
+                "The Bright Path सच में अपने छात्रों की सफलता के बारे में चिंता
+                करता है। कोर्स और मार्गदर्शन शानदार हैं!"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section  -->
+    <section class="text-gray-600 body-font relative">
+      <!-- Background Map -->
+      <div class="absolute inset-0 bg-gray-300">
+        <iframe
+          width="100%"
+          height="100%"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="The Bright Path Location"
+          scrolling="no"
+          src="https://maps.google.com/maps?q=Post%20Office%20Musrigharari,%20RP3Q%2B9W6,%20Musrigharari,%20Bishwambhar%20Pur%20Aloth,%20Bihar%20848103&ie=UTF8&t=&z=16&iwloc=B&output=embed"
+          style="filter: grayscale(1) contrast(1.2) opacity(0.8)"
+        ></iframe>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="container px-5 py-24 mx-auto flex">
+        <div
+          class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md"
+        >
+          <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
+            Get in Touch
+          </h2>
+          <p class="leading-relaxed mb-5 text-gray-600">
+            Have questions or need assistance? We're here to help. Drop us a
+            message, and we'll get back to you shortly.
+          </p>
+
+          <!-- Name Input -->
+          <div class="relative mb-4">
+            <label for="email" class="leading-7 text-sm text-gray-600"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full bg-white rounded border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              placeholder="Your Name"
+            />
+          </div>
+
+          <!-- Email Input -->
+          <div class="relative mb-4">
+            <label for="email" class="leading-7 text-sm text-gray-600"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full bg-white rounded border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              placeholder="Your Email"
+            />
+          </div>
+
+          <!-- Mobile Number Input -->
+          <div class="relative mb-4">
+            <label for="number" class="leading-7 text-sm text-gray-600"
+              >Contact No.</label
+            >
+            <input
+              id="number"
+              name="number"
+              type="tel"
+              class="w-full bg-white rounded border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              placeholder="Your Contact"
+            />
+          </div>
+
+          <!-- Message Input -->
+          <div class="relative mb-4">
+            <label for="message" class="leading-7 text-sm text-gray-600"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              class="w-full bg-white rounded border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              placeholder="Your Message"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            onclick="sendToWhatsApp()"
+            class="text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-red-700 rounded text-lg"
+          >
+            Submit
+          </button>
+          <p class="text-xs text-gray-500 mt-3">
+            We value your privacy and ensure your details remain confidential.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section  -->
+    <section
+      class="bg-gradient-to-r from-primary to-black text-white body-font"
+    >
+      <div
+        class="container mx-auto flex flex-col items-center py-24 px-5 text-center"
+      >
+        <!-- Title -->
+        <h1 class="sm:text-4xl text-3xl font-bold mb-6">
+          Ready to Take the First Step Toward Your Bright Future?
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="lg:w-2/3 w-full leading-relaxed text-lg mb-8">
+          Join thousands of students who trust The Bright Path to achieve their
+          educational and career goals. Start today and make your dreams a
+          reality!
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex justify-center gap-4">
+          <a href="#course-section">
+            <button
+              class="bg-white text-primary font-medium py-3 px-8 rounded-full hover:bg-gray-100 transition"
+            >
+              Get Started
+            </button>
+          </a>
+          <a href="./pages/courses.html#courses-exlorer">
+            <button
+              class="bg-transparent border-2 border-white py-3 px-8 rounded-full hover:bg-white hover:text-primary transition"
+            >
+              Learn More
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-gray-600 body-font">
+      <div
+        class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
+      >
+        <!-- Logo and Description -->
+        <div
+          class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left"
+        >
+          <a
+            class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+          >
+            <img
+              src="assets/images/logo.jpg"
+              alt="The Bright Path Logo"
+              class="w-10 h-10 rounded-full"
+            />
+            <span class="ml-3 text-xl">The Bright Path</span>
+          </a>
+          <p class="mt-2 text-sm text-gray-500">
+            Empowering students with expert guidance and resources to achieve
+            their dreams.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div
+          class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center"
+        >
+          <!-- Column 1 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              COURSES
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a
+                  href="./pages/courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Teaching (B.Ed, D.El.Ed)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Nursing (GNM, ANM)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Management (BBA, MBA)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/courses.html#courses-section"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Medical (B.Sc Nursing)</a
+                >
+              </li>
+            </nav>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              ABOUT
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a
+                  href="./pages/about.html#our-story"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Our Story</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/about.html#mission-vision"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Mission & Vision</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/about.html#our-team"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Our Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./pages/about.html#students-feedback"
+                  class="text-gray-600 hover:text-gray-800"
+                  >Careers</a
+                >
+              </li>
+            </nav>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              HELP
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a
+                  href="./pages/about.html#faq-section"
+                  class="text-gray-600 hover:text-gray-800"
+                  >FAQs</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Support</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Terms & Conditions</a
+                >
+              </li>
+            </nav>
+          </div>
+
+          <!-- Column 4 -->
+          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2
+              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
+            >
+              CONTACT
+            </h2>
+            <nav class="list-none mb-10">
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >info.brightpath04@gmail.com</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">+91 88252 73988</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800">+91 74795 56604</a>
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Musrigharari, Satanpur Road, Near Petrol Pump</a
+                >
+              </li>
+              <li>
+                <a class="text-gray-600 hover:text-gray-800"
+                  >Samastipur, Bihar, India, 848101</a
+                >
+              </li>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="bg-gray-100">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-gray-500 text-sm text-center sm:text-left">
+            © 2025 The Bright Path —
+            <a
+              href="https://thundergits.com/"
+              rel="noopener noreferrer"
+              class="text-gray-600 ml-1"
+              target="_blank"
+              >Developed By ThunderGits</a
+            >
+          </p>
+          <span
+            class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+          >
+            <a
+              class="text-gray-500 hover:text-primary"
+              href="https://www.facebook.com/profile.php?id=61571780450204"
+              target="_blank"
+            >
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                ></path>
+              </svg>
+            </a> -->
+            <a
+              class="ml-3 text-gray-500 hover:text-primary"
+              href="https://www.instagram.com/bright_path04/"
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a> -->
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/mobile-menu.js"></script>
+
+    <script type="module" src="./assets/js/enquiry-modal.js"></script>
+    <script src="./assets/js/whatsApp-integration.js"></script>
+  </body>
+</html>
