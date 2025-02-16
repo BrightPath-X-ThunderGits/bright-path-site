@@ -1,707 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Safalta Sangam - The Bright Path</title>
-    <link rel="stylesheet" href="../assets/css/output.css" />
-    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
-    <script src="../assets/js/quick-enquiry-btn.js"></script>
-    <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css">
-    <script src="../assets/js/quick-enquiry-btn.js"></script>
-    <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css">
-    <!-- Load Chatbot Styles -->
-    <link rel="stylesheet" href="../assets/css/chatbot.css">
-    <script type="module" src="../assets/js/renderChatBot.js"></script>
-    <!-- For .ico -->
-    <link rel="icon" href="../assets/images/logo.jpg" type="image/jpg" />
-    <!-- For .png -->
 
-    <style>
-      .selected {
-        background-color: #ffffff;
-        color: #d50100;
-        border-radius: 0.375rem;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-    </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>सफलता संगम - The Bright Path</title>
+  <link rel="stylesheet" href="../assets/css/output.css" />
+  <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon" />
+  <script src="../assets/js/quick-enquiry-btn.js"></script>
+  <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css">
+  <script src="../assets/js/quick-enquiry-btn.js"></script>
+  <link rel="stylesheet" href="../assets/css/quick-enquiry-btn.css">
+  <!-- Load Chatbot Styles -->
+  <link rel="stylesheet" href="../assets/css/chatbot.css">
+  <script type="module" src="../assets/js/renderChatBot.js"></script>
+  <!-- For .ico -->
+  <link rel="icon" href="../assets/images/logo.jpg" type="image/jpg" />
+  <!-- For .png -->
 
-  </head>
-  <body class="bg-accent text-secondary">
-    <!-- Include Chatbot -->
-<div id="chatbot-container"></div>
-    <!-- Quick Enquiry Floating Button -->
-<div id="quick-enquiry" class="fixed right-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white py-3 px-4 rounded-l-lg cursor-pointer shadow-lg">
-  Quick Enquiry
-</div>
-    <!-- Header -->
-    <header class="bg-primary text-white">
-      <div class="container mx-auto flex justify-between items-center p-5">
-        <!-- Logo Section -->
-        <a href="../index.html" class="flex items-center text-white">
-          <img
-            src="../assets/images/logo.jpg"
-            alt="The Bright Path Logo"
-            class="h-12 w-12 rounded-full bg-white"
-          />
-          <span class="ml-3 text-xl font-bold">The Bright Path</span>
-        </a>
+  <style>
+    .selected {
+      background-color: #ffffff;
+      color: #d50100;
+      border-radius: 0.375rem;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  </style>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden md:flex space-x-8">
-          <a href="../index.html" class="hover:text-accent">Home</a>
-          <a href="./about.html" class="hover:text-accent">About</a>
-          <a href="./services.html" class="hover:text-accent">Services</a>
-          <a href="./courses.html" class="hover:text-accent">Courses</a>
-          <a href="#" class="hover:text-primary selected">Contact</a>
-        </nav>
+</head>
 
-        <!-- Desktop CTA Button -->
-        <div class="hidden md:flex">
-          <button
-            class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
-          >
-            Get Counseling
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+<body class="bg-accent text-secondary">
+  <!-- Include Chatbot -->
+  <div id="chatbot-container"></div>
+  <!-- Quick Enquiry Floating Button -->
+  <div id="quick-enquiry"
+    class="fixed right-0 top-1/2 transform -translate-y-1/2 bg-green-600 text-white py-3 px-4 rounded-l-lg cursor-pointer shadow-lg">
+    Quick Enquiry
+  </div>
+
+  <!-- Enquiry Form -->
+  <div id="inquiry-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="relative bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
+      <!-- Close Button -->
+      <button id="close-modal" class="absolute top-4 right-3 text-gray-500 hover:text-red-700 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Modal Header -->
+      <h2 class="text-2xl font-bold text-primary mb-3 text-center">
+        Enquiry Form
+      </h2>
+      <p class="text-gray-600 text-center mb-6">
+        Please fill out the form below, and we’ll get back to you shortly.
+      </p>
+
+      <!-- Form -->
+      <form id="inquiry-form">
+        <!-- Name Field -->
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+          <input type="text" id="name" name="name"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            placeholder="Enter your name" required />
         </div>
 
-        <!-- Mobile Menu Button -->
-        <button
-          id="mobile-menu-button"
-          class="md:hidden inline-flex items-center text-white hover:text-accent focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            />
-          </svg>
+        <!-- Mobile Number Field -->
+        <div class="mb-4">
+          <label for="mobile" class="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
+          <input type="tel" id="mobile" name="mobile"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            placeholder="Enter your mobile number" required />
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input type="email" id="email" name="email"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            placeholder="Enter your email" required />
+        </div>
+
+        <!-- Course Dropdown -->
+        <div class="mb-6">
+          <label for="course" class="block text-sm font-medium text-gray-700 mb-1">Select Course</label>
+          <select id="course" name="course"
+            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            required>
+            <option value="" disabled selected>Select a course</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-primary text-white py-3 rounded-lg text-lg font-medium hover:bg-red-700 transition focus:outline-none">
+          Submit
         </button>
-      </div>
-
-      <!-- Full-Screen Navigation Menu for Mobile -->
-      <nav
-        id="mobile-menu"
-        class="fixed top-0 left-0 w-full h-full bg-primary text-white hidden flex-col items-center justify-center text-center z-50"
-      >
-        <!-- Close Button -->
-        <button
-          id="close-menu-button"
-          class="absolute top-4 right-6 text-white hover:text-accent focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            class="w-8 h-8"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-
-        <!-- Navigation Links for Mobile -->
-        <div class="flex flex-col items-start space-y-4 h-full mt-10 pl-6">
-          <a href="../index.html" class="flex items-center text-white">
-            <img
-              src="../assets/images/logo.jpg"
-              alt="The Bright Path Logo"
-              class="h-10 w-10 rounded-full bg-white p-1"
-            />
-            <span class="ml-3 text-xl font-bold">The Bright Path</span>
-          </a>
-          <a
-            href="../index.html"
-            class="text-sm py-3 hover:underline hover:text-accent"
-            >Home</a
-          >
-          <a
-            href="./about.html"
-            class="text-sm py-3 hover:underline hover:text-accent"
-            >About</a
-          >
-          <a
-            href="./services.html"
-            class="text-sm py-3 hover:underline hover:text-accent"
-            >Services</a
-          >
-          <a
-            href="./courses.html"
-            class="text-sm py-3 hover:underline hover:text-accent"
-            >Courses</a
-          >
-          <a
-            href="#"
-            class="text-sm py-3 hover:underline hover:text-accent"
-            >Contact</a
-          >
-
-          <button
-            class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded"
-          >
-            Get Counseling
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
-    </header>
-
-    <section class="relative h-[70vh] bg-cover bg-center" style="background-image: url('../assets/images/library.jpeg');">
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        
-        <!-- Content -->
-        <div class="container mx-auto px-6 relative z-10 flex flex-col justify-center items-center text-center h-full text-white">
-          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-            <span class="text-yellow-400">Safalta Sangam Library</span> में आपका स्वागत है
-          </h1>
-          <p class="text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
-            ज्ञान का भंडार जहां आपको सफलता के लिए जरूरी हर संसाधन मिलेगा। Discover a wide range of books, journals, और 
-            resources जो आपकी growth को inspire करें।
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="../index.html#about-services" class="bg-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-yellow-500 transition">
-              Explore Collection
-            </a>
-            <a href="#become-member" class="bg-transparent border-2 border-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition">
-              Apply For Membership
-            </a>
-          </div>
-        </div>
-      </section>
-    <!-- Explore -Sections -->
-      <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <!-- Section Header -->
-          <div class="flex flex-col text-center w-full mb-20">
-            <h2 class="text-xs text-red-500 tracking-widest font-medium title-font mb-1">SAFALTA SANGAM LIBRARY</h2>
-            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
-              Explore a World of Knowledge and Resources
-            </h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-700">
-              पढ़ाई के लिए एक शांत माहौल, अद्वितीय संसाधन और डिजिटल सुविधा। Whether you're preparing for competitive exams or just love reading, we have it all.
-            </p>
-          </div>
-      
-          <!-- Features Grid -->
-          <div class="flex flex-wrap -m-4">
-            <!-- Feature 1 -->
-            <div class="p-4 md:w-1/3">
-              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                <div class="flex items-center mb-3">
-                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                    </svg>
-                  </div>
-                  <h2 class="text-gray-900 text-lg title-font font-medium">Extensive Book Collection</h2>
-                </div>
-                <div class="flex-grow">
-                  <p class="leading-relaxed text-base">
-                    Competitive exams और academic success के लिए सभी आवश्यक किताबें और journals उपलब्ध हैं।
-                  </p>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Feature 2 -->
-            <div class="p-4 md:w-1/3">
-              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                <div class="flex items-center mb-3">
-                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                      <circle cx="12" cy="7" r="4"></circle>
-                      <path d="M12 14v8"></path>
-                    </svg>
-                  </div>
-                  <h2 class="text-gray-900 text-lg title-font font-medium">Peaceful Study Environment</h2>
-                </div>
-                <div class="flex-grow">
-                  <p class="leading-relaxed text-base">
-                    A distraction-free और productive ambiance, जहां focus और motivation बनाए रखना आसान है।
-                  </p>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Feature 3 -->
-            <div class="p-4 md:w-1/3">
-              <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
-                <div class="flex items-center mb-3">
-                  <div class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                      <path d="M3 10h18M3 14h18"></path>
-                    </svg>
-                  </div>
-                  <h2 class="text-gray-900 text-lg title-font font-medium">Digital Access and Wi-Fi</h2>
-                </div>
-                <div class="flex-grow">
-                  <p class="leading-relaxed text-base">
-                    Free Wi-Fi और डिजिटल संसाधन जैसे e-books और journals, आपकी learning को और आसान बनाते हैं।
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Library Shift Pricing Section -->
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="text-center mb-16">
-      <h1 class="sm:text-4xl text-3xl font-bold text-gray-900">Safalta Sangam Library Shift Pricing</h1>
-      <p class="text-lg text-gray-600 mt-2">Choose the Perfect Plan for Your Study Needs</p>
+      </form>
     </div>
-    <div class="flex flex-wrap justify-center gap-6">
-      <!-- One Shift -->
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
-          <h2 class="text-xl font-semibold text-gray-800">One Shift</h2>
-          <p class="text-gray-500">4 Hours</p>
-          <p class="text-2xl font-bold text-indigo-600 mt-2">₹300</p>
+  </div>
+  <!-- Library Pricing Offer Popup -->
+  <div id="offer-popup" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden px-4">
+    <div
+      class="relative rounded-2xl shadow-2xl p-6 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl w-full text-center bg-cover bg-center"
+      style="background-image: url('../assets/images/dfdf.jpg'); background-size: cover; background-position: center;">
+      <!-- Dark Overlay for Readability -->
+      <div class="absolute inset-0 bg-black bg-opacity-50 rounded-2xl"></div>
+
+      <!-- Content -->
+      <div class="relative z-10">
+        <!-- Header -->
+        <div class="flex justify-between items-center pb-4 border-b border-gray-300">
+          <!-- <h2  style="color: #fde047" class="text-2xl font-bold text-white">Library Shift Pricing Offer</h2> -->
+          <button id="close-offer" class="text-white hover:text-red-300 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-      </div>
-      <!-- Two Shift -->
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
-          <h2 class="text-xl font-semibold text-gray-800">Two Shifts</h2>
-          <p class="text-gray-500">8 Hours</p>
-          <p class="text-2xl font-bold text-indigo-600 mt-2">₹500</p>
-        </div>
-      </div>
-      <!-- Three Shift -->
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
-          <h2 class="text-xl font-semibold text-gray-800">Three Shifts</h2>
-          <p class="text-gray-500">12 Hours</p>
-          <p class="text-2xl font-bold text-indigo-600 mt-2">₹700</p>
-        </div>
-      </div>
-      <!-- Four Shift -->
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
-          <h2 class="text-xl font-semibold text-gray-800">Four Shifts</h2>
-          <p class="text-gray-500">16 Hours</p>
-          <p class="text-2xl font-bold text-indigo-600 mt-2">₹1500</p>
-        </div>
-      </div>
-      <!-- Sixth Shift -->
-      <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
-          <h2 class="text-xl font-semibold text-gray-800">Sixth Shift</h2>
-          <p class="text-gray-500">24 Hours</p>
-          <p class="text-2xl font-bold text-indigo-600 mt-2">₹1800</p>
+
+        <!-- Library Pricing Offer Title -->
+        <h2  style="color: #fde047" class="text-2xl sm:text-2xl font-extrabold text-yellow-400 mt-6">📚 Library Shift Pricing Discount📚</h2>
+
+        <ul class="text-lg text-white font-semibold mt-3 grid grid-cols-1 gap-2 sm:grid-cols-1">
+          <li class="flex justify-between items-center">
+            <span>📌 One Shift (4 Hours)</span> <span>Regular: ₹300 | Offer: ₹225</span>
+          </li>
+          <li class="flex justify-between items-center">
+            <span>📌 Two Shifts (8 Hours)</span> <span>Regular: ₹500 | Offer: ₹375</span>
+          </li>
+          <li class="flex justify-between items-center">
+            <span>📌 Three Shifts (12 Hours)</span> <span>Regular: ₹700 | Offer: ₹525</span>
+          </li>
+          <li class="flex justify-between items-center">
+            <span>📌 Four Shifts (16 Hours)</span> <span>Regular: ₹1500 | Offer: ₹1125</span>
+          </li>
+          <li class="flex justify-between items-center">
+            <span>📌 Six Shifts (24 Hours)</span> <span>Regular: ₹1800 | Offer: ₹1350</span>
+          </li>
+        </ul>
+        
+
+        <p  style="color: #fde047" class="text-white text-2xl sm:text-2xl py-2 mt-3">Hurry! Limited seats available. 🚀</p>
+
+        <!-- CTA Button -->
+        <div class="mt-6">
+          <button id="claim-offer"
+          style="background-color: #facc15"
+            class="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-3 rounded-lg text-lg font-semibold transition-all focus:outline-none shadow-lg transform hover:scale-105 active:scale-95">
+            Claim Your Seat Now 🚀
+          </button>
         </div>
       </div>
     </div>
   </div>
-</section>
 
+  <!-- Header -->
+  <header class="bg-primary text-white">
+    <div class="container mx-auto flex justify-between items-center p-5">
+      <!-- Logo Section -->
+      <a href="../index.html" class="flex items-center text-white">
+        <img src="../assets/images/logo.jpg" alt="The Bright Path Logo" class="h-12 w-12 rounded-full bg-white" />
+        <span class="ml-3 text-xl font-bold">The Bright Path</span>
+      </a>
 
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="../index.html" class="hover:text-accent">Home</a>
+        <a href="./about.html" class="hover:text-accent">About</a>
+        <a href="./services.html" class="hover:text-accent">Services</a>
+        <a href="./courses.html" class="hover:text-accent">Courses</a>
+        <a href="#" class="hover:text-primary selected">Contact</a>
+      </nav>
 
-<!-- membership Benifits -->
-      <section class="text-gray-600 body-font bg-gray-50">
-        <div class="container px-5 py-24 mx-auto">
-          <!-- Section Header -->
-          <div class="flex flex-col text-center w-full mb-20">
-            <h2 class="text-xs text-red-500 tracking-widest font-medium title-font mb-1">MEMBERSHIP BENEFITS</h2>
-            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
-              क्यों जुड़ें Safalta Sangam Library से?
-            </h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-700">
-              एक बेहतर सीखने का अनुभव पाएं, जहां आपको शिक्षा के हर पहलू में सहायता मिले। Discover the perks of being a part of our library community.
-            </p>
-          </div>
-      
-          <!-- Benefits Grid -->
-          <div class="flex flex-wrap -m-4">
-            <!-- Benefit 1 -->
-            <div class="p-4 md:w-1/3">
-              <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-                <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 8v4m0 4h.01"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg font-medium text-gray-900 mb-2">Affordable Membership Plans</h2>
-                <p class="leading-relaxed text-center">
-                  ₹200/महीना से शुरू होकर किफायती प्लान्स। Enjoy unlimited access to books, digital resources, and study spaces.
-                </p>
+      <!-- Desktop CTA Button -->
+      <div class="hidden md:flex">
+        <button
+          class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded">
+          Get Counseling
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button"
+        class="md:hidden inline-flex items-center text-white hover:text-accent focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Full-Screen Navigation Menu for Mobile -->
+    <nav id="mobile-menu"
+      class="fixed top-0 left-0 w-full h-full bg-primary text-white hidden flex-col items-center justify-center text-center z-50">
+      <!-- Close Button -->
+      <button id="close-menu-button" class="absolute top-4 right-6 text-white hover:text-accent focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Navigation Links for Mobile -->
+      <div class="flex flex-col items-start space-y-4 h-full mt-10 pl-6">
+        <a href="../index.html" class="flex items-center text-white">
+          <img src="../assets/images/logo.jpg" alt="The Bright Path Logo" class="h-10 w-10 rounded-full bg-white p-1" />
+          <span class="ml-3 text-xl font-bold">The Bright Path</span>
+        </a>
+        <a href="../index.html" class="text-sm py-3 hover:underline hover:text-accent">Home</a>
+        <a href="./about.html" class="text-sm py-3 hover:underline hover:text-accent">About</a>
+        <a href="./services.html" class="text-sm py-3 hover:underline hover:text-accent">Services</a>
+        <a href="./courses.html" class="text-sm py-3 hover:underline hover:text-accent">Courses</a>
+        <a href="#" class="text-sm py-3 hover:underline hover:text-accent">Contact</a>
+
+        <button
+          class="inline-flex items-center bg-accent text-primary border-0 py-2 px-4 focus:outline-none hover:bg-white rounded">
+          Get Counseling
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <section class="relative h-[70vh] bg-cover bg-center" style="background-image: url('../assets/images/library.jpeg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Content -->
+    <div
+      class="container mx-auto px-6 relative z-10 flex flex-col justify-center items-center text-center h-full text-white">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+        <span class="text-yellow-400">सफलता संगम Library</span> में आपका स्वागत है
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed max-w-2xl mb-8">
+        ज्ञान का भंडार जहां आपको सफलता के लिए जरूरी हर संसाधन मिलेगा। Discover a wide range of books, journals, और
+        resources जो आपकी growth को inspire करें।
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="../index.html#about-services"
+          class="bg-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-yellow-500 transition">
+          Explore Collection
+        </a>
+        <a href="#become-member"
+          class="bg-transparent border-2 border-primary text-white font-medium py-3 px-8 rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition">
+          Apply For Membership
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Explore -Sections -->
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <!-- Section Header -->
+      <div class="flex flex-col text-center w-full mb-20">
+        <h2 class="text-xs text-red-500 tracking-widest font-medium title-font mb-1">सफलता संगम LIBRARY</h2>
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+          Explore a World of Knowledge and Resources
+        </h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-700">
+          पढ़ाई के लिए एक शांत माहौल, अद्वितीय संसाधन और डिजिटल सुविधा। Whether you're preparing for competitive exams
+          or just love reading, we have it all.
+        </p>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="flex flex-wrap -m-4">
+        <!-- Feature 1 -->
+        <div class="p-4 md:w-1/3">
+          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+            <div class="flex items-center mb-3">
+              <div
+                class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
               </div>
+              <h2 class="text-gray-900 text-lg title-font font-medium">Extensive Book Collection</h2>
             </div>
-      
-            <!-- Benefit 2 -->
-            <div class="p-4 md:w-1/3">
-              <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-                <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
-                    <path d="M3 10h18M3 14h18"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg font-medium text-gray-900 mb-2">Exclusive Study Spaces</h2>
-                <p class="leading-relaxed text-center">
-                  शांत और आरामदायक study zones। Dedicated cabins और group study rooms उपलब्ध हैं।
-                </p>
-              </div>
-            </div>
-      
-            <!-- Benefit 3 -->
-            <div class="p-4 md:w-1/3">
-              <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-                <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg font-medium text-gray-900 mb-2">24/7 Library Access</h2>
-                <p class="leading-relaxed text-center">
-                  Flexible timings for everyone! चाहे सुबह हो या रात, पढ़ाई कभी नहीं रुकेगी।
-                </p>
-              </div>
-            </div>
-          </div>
-      
-          <!-- Call to Action -->
-          <div class="mt-12 text-center">
-            <a
-              href="#become-member"
-              class="bg-red-600 text-white py-3 px-8 rounded-lg text-lg font-medium hover:bg-red-700 transition"
-            >
-              Become a Member
-            </a>
-          </div>
-        </div>
-      </section>
-
-       <!-- Testimonial Section  -->
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <!-- Title and Description -->
-        <div
-          class="flex flex-wrap w-full mb-20 flex-col items-center text-center"
-        >
-          <h1
-            class="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary"
-          >
-            What Our Students Say
-          </h1>
-          <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
-            हमारे छात्रों की प्रेरणादायक कहानियां देखें और जानें कि कैसे The
-            Bright Path ने उनके करियर और भविष्य को बदल दिया है।
-          </p>
-        </div>
-
-        <!-- Video Testimonials Grid -->
-        <div class="flex flex-wrap -m-4">
-          <!-- Testimonial 1 -->
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
-                <iframe
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/Rsp82X6urs4"
-                  title="Testimonial Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-               Puja Kumari
-              </h2>
+            <div class="flex-grow">
               <p class="leading-relaxed text-base">
-                "The Bright Path मेरे लिए एक जीवन बदलने वाला अनुभव रहा है।
-                Mentors और resources ने मुझे मेरे सपनों को हासिल करने में मदद
-                की।"
+                Competitive exams और academic success के लिए सभी आवश्यक किताबें और journals उपलब्ध हैं।
               </p>
             </div>
           </div>
+        </div>
 
-          <!-- Testimonial 2 -->
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
-                <iframe
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/HxVNL-T_49I"
-                  title="Testimonial Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+        <!-- Feature 2 -->
+        <div class="p-4 md:w-1/3">
+          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+            <div class="flex items-center mb-3">
+              <div
+                class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-5 h-5" viewBox="0 0 24 24">
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <path d="M12 14v8"></path>
+                </svg>
               </div>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                Rahul Kumar 
-              </h2>
+              <h2 class="text-gray-900 text-lg title-font font-medium">Peaceful Study Environment</h2>
+            </div>
+            <div class="flex-grow">
               <p class="leading-relaxed text-base">
-                "The Bright Path से मुझे जो समर्थन और मार्गदर्शन मिला, वह
-                अद्वितीय रहा है। हर छात्र के लिए अत्यधिक सिफारिश की जाती है!"
+                A distraction-free और productive ambiance, जहां focus और motivation बनाए रखना आसान है।
               </p>
             </div>
           </div>
+        </div>
 
-          <!-- Testimonial 3 -->
-          <div class="xl:w-1/3 md:w-1/2 p-4">
-            <div class="bg-gray-100 p-6 rounded-lg">
-              <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
-                <iframe
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/5ARe4_qv5tU"
-                  title="Testimonial Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
+        <!-- Feature 3 -->
+        <div class="p-4 md:w-1/3">
+          <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col">
+            <div class="flex items-center mb-3">
+              <div
+                class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-red-500 text-primary flex-shrink-0">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M3 10h18M3 14h18"></path>
+                </svg>
               </div>
-              <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
-                prasant Kumar 
-              </h2>
+              <h2 class="text-gray-900 text-lg title-font font-medium">Digital Access and Wi-Fi</h2>
+            </div>
+            <div class="flex-grow">
               <p class="leading-relaxed text-base">
-                "The Bright Path सच में अपने छात्रों की सफलता के बारे में चिंता
-                करता है। कोर्स और मार्गदर्शन शानदार हैं!"
+                Free Wi-Fi और डिजिटल संसाधन जैसे e-books और journals, आपकी learning को और आसान बनाते हैं।
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-      <section class="text-gray-600 body-font bg-gray-50">
-        <div class="container px-5 py-24 mx-auto">
-          <!-- Section Header -->
-          <div class="text-center mb-16">
-            <h2 class="sm:text-4xl text-3xl font-bold text-gray-900">Gallery</h2>
-            <p
-              class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto"
-            >
-            Safalta Sangam के विभिन्न programs, events, और student success stories को हमारे visual gallery के माध्यम से एक्सप्लोर करें।
+  <!-- Library Shift Pricing Section -->
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="sm:text-4xl text-3xl font-bold text-gray-900">सफलता संगम Library Shift Pricing</h1>
+        <p class="text-lg text-gray-600 mt-2">Choose the Perfect Plan for Your Study Needs</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6">
+        <!-- One Shift -->
+        <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
+            <h2 class="text-xl font-semibold text-gray-800">One Shift</h2>
+            <p class="text-gray-500">4 Hours</p>
+            <p class="text-2xl font-bold text-indigo-600 mt-2">₹300</p>
+          </div>
+        </div>
+        <!-- Two Shift -->
+        <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
+            <h2 class="text-xl font-semibold text-gray-800">Two Shifts</h2>
+            <p class="text-gray-500">8 Hours</p>
+            <p class="text-2xl font-bold text-indigo-600 mt-2">₹500</p>
+          </div>
+        </div>
+        <!-- Three Shift -->
+        <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
+            <h2 class="text-xl font-semibold text-gray-800">Three Shifts</h2>
+            <p class="text-gray-500">12 Hours</p>
+            <p class="text-2xl font-bold text-indigo-600 mt-2">₹700</p>
+          </div>
+        </div>
+        <!-- Four Shift -->
+        <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
+            <h2 class="text-xl font-semibold text-gray-800">Four Shifts</h2>
+            <p class="text-gray-500">16 Hours</p>
+            <p class="text-2xl font-bold text-indigo-600 mt-2">₹1500</p>
+          </div>
+        </div>
+        <!-- Sixth Shift -->
+        <div class="p-4 w-full sm:w-1/2 lg:w-1/3">
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 text-center border border-gray-200 hover:shadow-xl transition duration-300">
+            <h2 class="text-xl font-semibold text-gray-800">Sixth Shift</h2>
+            <p class="text-gray-500">24 Hours</p>
+            <p class="text-2xl font-bold text-indigo-600 mt-2">₹1800</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- membership Benifits -->
+  <section class="text-gray-600 body-font bg-gray-50">
+    <div class="container px-5 py-24 mx-auto">
+      <!-- Section Header -->
+      <div class="flex flex-col text-center w-full mb-20">
+        <h2 class="text-xs text-red-500 tracking-widest font-medium title-font mb-1">MEMBERSHIP BENEFITS</h2>
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+          क्यों जुड़ें सफलता संगम Library से?
+        </h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-700">
+          एक बेहतर सीखने का अनुभव पाएं, जहां आपको शिक्षा के हर पहलू में सहायता मिले। Discover the perks of being a part
+          of our library community.
+        </p>
+      </div>
+
+      <!-- Benefits Grid -->
+      <div class="flex flex-wrap -m-4">
+        <!-- Benefit 1 -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-8 h-8" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 8v4m0 4h.01"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg font-medium text-gray-900 mb-2">Affordable Membership Plans</h2>
+            <p class="leading-relaxed text-center">
+              ₹200/महीना से शुरू होकर किफायती प्लान्स। Enjoy unlimited access to books, digital resources, and study
+              spaces.
             </p>
           </div>
-  
-          <!-- Carousel Wrapper -->
-          <div class="relative">
-            <!-- Carousel Content -->
-            <div class="carousel-inner relative w-full overflow-hidden">
-              <!-- Carousel Items -->
-              <div class="carousel-item w-full">
-                <img
-                  class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/labrary-01.jpeg"
-                  alt="Gallery Image 1"
-                />
-              </div>
-              <div class="carousel-item w-full">
-                <img
-                  class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/library.jpeg"
-                  alt="Gallery Image 2"
-                />
-              </div>
-              <div class="carousel-item w-full">
-                <img
-                  class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/events/e3.jpeg"
-                  alt="Gallery Image 3"
-                />
-              </div>
-              <div class="carousel-item w-full">
-                <img
-                  class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/events/e4.jpeg"
-                  alt="Gallery Image 4"
-                />
-              </div>
-              <div class="carousel-item w-full">
-                <img
-                  class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/events/e5.jpeg"
-                  alt="Gallery Image 5"
-                />
-              </div>
-              <div class="carousel-item w-full">
-                <img
-                  class="w-full h-96 object-cover object-center rounded-lg"
-                  src="../assets/images/library.jpeg"
-                  alt="Gallery Image 6"
-                />
-              </div>
-            </div>
-  
-            <!-- Carousel Controls -->
-            <button
-              class="absolute top-0 left-0 px-6 mt-48 py-3 text-white bg-gray-900 bg-opacity-50 hover:bg-opacity-75 focus:outline-none transform -translate-y-1/2 rounded-full"
-              id="prev-btn"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-6 h-6"
-                viewBox="0 0 24 24"
-              >
-                <path d="M15 19l-7-7 7-7"></path>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-8 h-8" viewBox="0 0 24 24">
+                <path d="M3 10h18M3 14h18"></path>
               </svg>
-            </button>
-            <button
-              class="absolute top-0 right-0 px-6 mt-48 py-3 text-white bg-gray-900 bg-opacity-50 hover:bg-opacity-75 focus:outline-none transform -translate-y-1/2 rounded-full"
-              id="next-btn"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-6 h-6"
-                viewBox="0 0 24 24"
-              >
-                <path d="M9 5l7 7-7 7"></path>
-              </svg>
-            </button>
-  
-            <!-- Status Bar -->
-            <div
-              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg font-medium bg-gray-900 bg-opacity-50 px-4 py-2 rounded-full"
-            >
-              <span id="current-slide">1</span> / <span id="total-slides">6</span>
             </div>
+            <h2 class="text-lg font-medium text-gray-900 mb-2">Exclusive Study Spaces</h2>
+            <p class="leading-relaxed text-center">
+              शांत और आरामदायक study zones। Dedicated cabins और group study rooms उपलब्ध हैं।
+            </p>
           </div>
         </div>
-      </section>
 
+        <!-- Benefit 3 -->
+        <div class="p-4 md:w-1/3">
+          <div class="h-full bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
+            <div class="w-16 h-16 flex items-center justify-center rounded-full bg-red-500 text-primary mb-4">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-8 h-8" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </div>
+            <h2 class="text-lg font-medium text-gray-900 mb-2">24/7 Library Access</h2>
+            <p class="leading-relaxed text-center">
+              Flexible timings for everyone! चाहे सुबह हो या रात, पढ़ाई कभी नहीं रुकेगी।
+            </p>
+          </div>
+        </div>
+      </div>
 
-      <section id="become-member" class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col text-center w-full mb-12">
-            <h2
-              class="text-xs text-red-600 tracking-widest font-medium title-font mb-1"
-            >
-              APPLY NOW
+      <!-- Call to Action -->
+      <div class="mt-12 text-center">
+        <a href="#become-member"
+          class="bg-red-600 text-white py-3 px-8 rounded-lg text-lg font-medium hover:bg-red-700 transition">
+          Become a Member
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section  -->
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <!-- Title and Description -->
+      <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary">
+          What Our Students Say
+        </h1>
+        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+          हमारे छात्रों की प्रेरणादायक कहानियां देखें और जानें कि कैसे The
+          Bright Path ने उनके करियर और भविष्य को बदल दिया है।
+        </p>
+      </div>
+
+      <!-- Video Testimonials Grid -->
+      <div class="flex flex-wrap -m-4">
+        <!-- Testimonial 1 -->
+        <div class="xl:w-1/3 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/Rsp82X6urs4" title="Testimonial Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+              Puja Kumari
             </h2>
-            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
-              Apply for Membership
-            </h1>
-          </div>
-          <div class="lg:w-1/2 md:w-2/3 mx-auto">
-            <form id="apply-form" class="flex flex-wrap -m-2">
-              <!-- Full Name -->
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="full-name" class="leading-7 text-sm text-gray-600"
-                    >Full Name</label
-                  >
-                  <input
-                    type="text"
-                    id="name"
-                    name="full-name"
-                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    required
-                  />
-                </div>
-              </div>
-              <!-- Email -->
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="email" class="leading-7 text-sm text-gray-600"
-                    >Email</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    required
-                  />
-                </div>
-              </div>
-              <!-- Phone Number -->
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="phone" class="leading-7 text-sm text-gray-600"
-                    >Phone Number</label
-                  >
-                  <input
-                    type="tel"
-                    id="number"
-                    name="phone"
-                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                    required
-                  />
-                </div>
-              </div>
-              <!-- Message -->
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="message" class="leading-7 text-sm text-gray-600"
-                    >Message</label
-                  >
-                  <textarea
-                    id="message"
-                    name="message"
-                    class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                  ></textarea>
-                </div>
-              </div>
-              <!-- Submit Button -->
-              <div class="p-2 w-full mt-4">
-                <button
-                onclick="sendToWhatsApp()"
-                  type="submit"
-                  class="flex mx-auto text-white bg-red-600 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 rounded text-lg"
-                >
-                  Submit Application
-                </button>
-              </div>
-            </form>
+            <p class="leading-relaxed text-base">
+              "The Bright Path मेरे लिए एक जीवन बदलने वाला अनुभव रहा है।
+              Mentors और resources ने मुझे मेरे सपनों को हासिल करने में मदद
+              की।"
+            </p>
           </div>
         </div>
-      </section>
-    
-    
+
+        <!-- Testimonial 2 -->
+        <div class="xl:w-1/3 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/HxVNL-T_49I" title="Testimonial Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+              Rahul Kumar
+            </h2>
+            <p class="leading-relaxed text-base">
+              "The Bright Path से मुझे जो समर्थन और मार्गदर्शन मिला, वह
+              अद्वितीय रहा है। हर छात्र के लिए अत्यधिक सिफारिश की जाती है!"
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="xl:w-1/3 md:w-1/2 p-4">
+          <div class="bg-gray-100 p-6 rounded-lg">
+            <div class="w-full h-60 mb-6 overflow-hidden rounded-lg">
+              <iframe class="w-full h-full" src="https://www.youtube.com/embed/5ARe4_qv5tU" title="Testimonial Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">
+              prasant Kumar
+            </h2>
+            <p class="leading-relaxed text-base">
+              "The Bright Path सच में अपने छात्रों की सफलता के बारे में चिंता
+              करता है। कोर्स और मार्गदर्शन शानदार हैं!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="text-gray-600 body-font bg-gray-50">
+    <div class="container px-5 py-24 mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="sm:text-4xl text-3xl font-bold text-gray-900">Gallery</h2>
+        <p class="text-lg leading-relaxed text-gray-700 mt-4 max-w-3xl mx-auto">
+          सफलता संगम के विभिन्न programs, events, और student success stories को हमारे visual gallery के माध्यम से
+          एक्सप्लोर करें।
+        </p>
+      </div>
+
+      <!-- Carousel Wrapper -->
+      <div class="relative">
+        <!-- Carousel Content -->
+        <div class="carousel-inner relative w-full overflow-hidden">
+          <!-- Carousel Items -->
+          <div class="carousel-item w-full">
+            <img class="w-full h-96 object-cover object-center rounded-lg" src="../assets/images/labrary-01.jpeg"
+              alt="Gallery Image 1" />
+          </div>
+          <div class="carousel-item w-full">
+            <img class="w-full h-96 object-cover object-center rounded-lg" src="../assets/images/library.jpeg"
+              alt="Gallery Image 2" />
+          </div>
+          <div class="carousel-item w-full">
+            <img class="w-full h-96 object-cover object-center rounded-lg" src="../assets/images/events/e3.jpeg"
+              alt="Gallery Image 3" />
+          </div>
+          <div class="carousel-item w-full">
+            <img class="w-full h-96 object-cover object-center rounded-lg" src="../assets/images/events/e4.jpeg"
+              alt="Gallery Image 4" />
+          </div>
+          <div class="carousel-item w-full">
+            <img class="w-full h-96 object-cover object-center rounded-lg" src="../assets/images/events/e5.jpeg"
+              alt="Gallery Image 5" />
+          </div>
+          <div class="carousel-item w-full">
+            <img class="w-full h-96 object-cover object-center rounded-lg" src="../assets/images/library.jpeg"
+              alt="Gallery Image 6" />
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button
+          class="absolute top-0 left-0 px-6 mt-48 py-3 text-white bg-gray-900 bg-opacity-50 hover:bg-opacity-75 focus:outline-none transform -translate-y-1/2 rounded-full"
+          id="prev-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+            <path d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button
+          class="absolute top-0 right-0 px-6 mt-48 py-3 text-white bg-gray-900 bg-opacity-50 hover:bg-opacity-75 focus:outline-none transform -translate-y-1/2 rounded-full"
+          id="next-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+            <path d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <!-- Status Bar -->
+        <div
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-lg font-medium bg-gray-900 bg-opacity-50 px-4 py-2 rounded-full">
+          <span id="current-slide">1</span> / <span id="total-slides">6</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- <section class="flex items-center justify-center h-[80vh] bg-gray-100 px-4">
+  <section id="become-member" class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h2 class="text-xs text-red-600 tracking-widest font-medium title-font mb-1">
+          APPLY NOW
+        </h2>
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+          Apply for Membership
+        </h1>
+      </div>
+      <div class="lg:w-1/2 md:w-2/3 mx-auto">
+        <form id="apply-form" class="flex flex-wrap -m-2">
+          <!-- Full Name -->
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
+              <input type="text" id="name" name="full-name"
+                class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                required />
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+              <input type="email" id="email" name="email"
+                class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                required />
+            </div>
+          </div>
+          <!-- Phone Number -->
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="phone" class="leading-7 text-sm text-gray-600">Phone Number</label>
+              <input type="tel" id="number" name="phone"
+                class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                required />
+            </div>
+          </div>
+          <!-- Message -->
+          <div class="p-2 w-full">
+            <div class="relative">
+              <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+              <textarea id="message" name="message"
+                class="w-full bg-gray-100 rounded border border-gray-300 focus:border-red-500 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+            </div>
+          </div>
+          <!-- Submit Button -->
+          <div class="p-2 w-full mt-4">
+            <button onclick="sendToWhatsApp()" type="submit"
+              class="flex mx-auto text-white bg-red-600 border-0 py-2 px-8 focus:outline-none hover:bg-red-700 rounded text-lg">
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- <section class="flex items-center justify-center h-[80vh] bg-gray-100 px-4">
       <div class="text-center max-w-3xl py-24">
         <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
           Contact Us Page is Work in Progress
@@ -720,216 +706,161 @@
       </div>
     </section> -->
 
-    <!-- CTA Section  -->
-    <section
-      class="bg-gradient-to-r from-primary to-black text-white body-font"
-    >
-      <div
-        class="container mx-auto flex flex-col items-center py-24 px-5 text-center"
-      >
-        <!-- Title -->
-        <h1 class="sm:text-4xl text-3xl font-bold mb-6">
-          Ready to Take the First Step Toward Your Bright Future?
-        </h1>
+  <!-- CTA Section  -->
+  <section class="bg-gradient-to-r from-primary to-black text-white body-font">
+    <div class="container mx-auto flex flex-col items-center py-24 px-5 text-center">
+      <!-- Title -->
+      <h1 class="sm:text-4xl text-3xl font-bold mb-6">
+        Ready to Take the First Step Toward Your Bright Future?
+      </h1>
 
-        <!-- Subtitle -->
-        <p class="lg:w-2/3 w-full leading-relaxed text-lg mb-8">
-          Join thousands of students who trust The Bright Path to achieve their
-          educational and career goals. Start today and make your dreams a
-          reality!
+      <!-- Subtitle -->
+      <p class="lg:w-2/3 w-full leading-relaxed text-lg mb-8">
+        Join thousands of students who trust The Bright Path to achieve their
+        educational and career goals. Start today and make your dreams a
+        reality!
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex justify-center gap-4">
+        <button class="bg-white text-primary font-medium py-3 px-8 rounded-full hover:bg-gray-100 transition">
+          Get Started
+        </button>
+        <button
+          class="bg-transparent border-2 border-white py-3 px-8 rounded-full hover:bg-white hover:text-primary transition">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-gray-600 body-font">
+    <div
+      class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <!-- Logo and Description -->
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <img src="../assets/images/logo.jpg" alt="The Bright Path Logo" class="w-10 h-10 rounded-full" />
+          <span class="ml-3 text-xl">The Bright Path</span>
+        </a>
+        <p class="mt-2 text-sm text-gray-500">
+          Empowering students with expert guidance and resources to achieve
+          their dreams.
         </p>
+      </div>
 
-        <!-- CTA Buttons -->
-        <div class="flex justify-center gap-4">
-          <button
-            class="bg-white text-primary font-medium py-3 px-8 rounded-full hover:bg-gray-100 transition"
-          >
-            Get Started
-          </button>
-          <button
-            class="bg-transparent border-2 border-white py-3 px-8 rounded-full hover:bg-white hover:text-primary transition"
-          >
-            Learn More
-          </button>
+      <!-- Links -->
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <!-- Column 1 -->
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            COURSES
+          </h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800">Teaching (B.Ed,
+                D.El.Ed)</a>
+            </li>
+            <li>
+              <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800">Nursing (GNM, ANM)</a>
+            </li>
+            <li>
+              <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800">Management (BBA,
+                MBA)</a>
+            </li>
+            <li>
+              <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800">Medical (B.Sc
+                Nursing)</a>
+            </li>
+          </nav>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            ABOUT
+          </h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a href="./about.html#our-story" class="text-gray-600 hover:text-gray-800">Our Story</a>
+            </li>
+            <li>
+              <a href="./about.html#mission-vision" class="text-gray-600 hover:text-gray-800">Mission & Vision</a>
+            </li>
+            <li>
+              <a href="./about.html#our-team" class="text-gray-600 hover:text-gray-800">Our Team</a>
+            </li>
+            <li>
+              <a href="./about.html#students-feedback" class="text-gray-600 hover:text-gray-800">Careers</a>
+            </li>
+          </nav>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            HELP
+          </h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a href="./about.html#faq-section" class="text-gray-600 hover:text-gray-800">FAQs</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Support</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Terms & Conditions</a>
+            </li>
+          </nav>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+            CONTACT
+          </h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">info.brightpath04@gmail.com</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">+91 88252 73988</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">+91 74795 56604</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Musrigharari, Satanpur Road, Near Petrol Pump</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Samastipur, Bihar, India, 848101</a>
+            </li>
+          </nav>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer class="text-gray-600 body-font">
-      <div
-        class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col"
-      >
-        <!-- Logo and Description -->
-        <div
-          class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left"
-        >
-          <a
-            class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
-          >
-            <img
-              src="../assets/images/logo.jpg"
-              alt="The Bright Path Logo"
-              class="w-10 h-10 rounded-full"
-            />
-            <span class="ml-3 text-xl">The Bright Path</span>
+    <!-- Bottom Bar -->
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left">
+          © 2025 The Bright Path —
+          <a href="https://thundergits.com/" rel="noopener noreferrer" class="text-gray-600 ml-1"
+            target="_blank">Developed By ThunderGits</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="text-gray-500 hover:text-primary" href="https://www.facebook.com/profile.php?id=61571780450204"
+            target="_blank">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
           </a>
-          <p class="mt-2 text-sm text-gray-500">
-            Empowering students with expert guidance and resources to achieve
-            their dreams.
-          </p>
-        </div>
-
-        <!-- Links -->
-        <div
-          class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center"
-        >
-          <!-- Column 1 -->
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2
-              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
-            >
-              COURSES
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
-                  >Teaching (B.Ed, D.El.Ed)</a
-                >
-              </li>
-              <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
-                  >Nursing (GNM, ANM)</a
-                >
-              </li>
-              <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
-                  >Management (BBA, MBA)</a
-                >
-              </li>
-              <li>
-                <a href="./courses.html#courses-section" class="text-gray-600 hover:text-gray-800"
-                  >Medical (B.Sc Nursing)</a
-                >
-              </li>
-            </nav>
-          </div>
-
-          <!-- Column 2 -->
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2
-              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
-            >
-              ABOUT
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a href="./about.html#our-story" class="text-gray-600 hover:text-gray-800">Our Story</a>
-              </li>
-              <li>
-                <a href="./about.html#mission-vision" class="text-gray-600 hover:text-gray-800"
-                  >Mission & Vision</a
-                >
-              </li>
-              <li>
-                <a href="./about.html#our-team" class="text-gray-600 hover:text-gray-800">Our Team</a>
-              </li>
-              <li>
-                <a href="./about.html#students-feedback" class="text-gray-600 hover:text-gray-800">Careers</a>
-              </li>
-            </nav>
-          </div>
-
-          <!-- Column 3 -->
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2
-              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
-            >
-              HELP
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a href="./about.html#faq-section" class="text-gray-600 hover:text-gray-800">FAQs</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Support</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800"
-                  >Terms & Conditions</a
-                >
-              </li>
-            </nav>
-          </div>
-
-          <!-- Column 4 -->
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2
-              class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
-            >
-              CONTACT
-            </h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-600 hover:text-gray-800"
-                  >info.brightpath04@gmail.com</a
-                >
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">+91 88252 73988</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">+91 74795 56604</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Musrigharari, Satanpur Road, Near Petrol Pump</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800"
-                  >Samastipur, Bihar, India, 848101</a
-                >
-              </li>
-            </nav>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="bg-gray-100">
-        <div
-          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
-        >
-          <p class="text-gray-500 text-sm text-center sm:text-left">
-            © 2025 The Bright Path —
-            <a
-              href="https://thundergits.com/"
-              rel="noopener noreferrer"
-              class="text-gray-600 ml-1"
-              target="_blank"
-              >Developed By ThunderGits</a
-            >
-          </p>
-          <span
-            class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
-          >
-            <a class="text-gray-500 hover:text-primary" href="https://www.facebook.com/profile.php?id=61571780450204" target="_blank">
-              <svg
-                fill="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                ></path>
-              </svg>
-            </a>
-            <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+          <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
               <svg
                 fill="currentColor"
                 stroke-linecap="round"
@@ -943,23 +874,15 @@
                 ></path>
               </svg>
             </a> -->
-            <a class="ml-3 text-gray-500 hover:text-primary" href="https://www.instagram.com/bright_path04/" target="_blank">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-5 h-5"
-                viewBox="0 0 24 24"
-              >
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path
-                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-                ></path>
-              </svg>
-            </a>
-            <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
+          <a class="ml-3 text-gray-500 hover:text-primary" href="https://www.instagram.com/bright_path04/"
+            target="_blank">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <!-- <a class="ml-3 text-gray-500 hover:text-primary" href="#">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -976,14 +899,16 @@
                 <circle cx="4" cy="4" r="2" stroke="none"></circle>
               </svg>
             </a> -->
-          </span>
-        </div>
+        </span>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="../assets/js/mobile-menu.js"></script>
+  <script src="../assets/js/mobile-menu.js"></script>
 
-    <script src="../assets/js/whatsApp-integration.js"></script>
-    <script src="../assets/js/gallery-carousel.js"></script>
-  </body>
+  <script src="../assets/js/whatsApp-integration.js"></script>
+  <script src="../assets/js/gallery-carousel.js"></script>
+  <script type="module" src="../assets/js/enquiry-modal.js"></script>
+</body>
+
 </html>

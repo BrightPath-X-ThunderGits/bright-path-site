@@ -337,6 +337,7 @@ const courses = [
       },
     },
   },
+ 
 ];
 
 export { courses };
